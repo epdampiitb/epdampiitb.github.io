@@ -357,7 +357,7 @@ show_tile: true
 				<header class="major">
 					<h3>Nabeel Ahmed</h3>
 				</header>
-				<p>Wassup! I enjoy anything and everything from music, writing, travelling, literature, filmmaking to architecture, comedy, improv, design, fashion and theatre. Most notably, I am a huge cinephile and I have a crazy obsession with dance. You might find me in the InSync council organising shows and events.</p>
+				<p>Wassup! I enjoy anything and everything from music, writing, travelling, literature, filmmaking to architecture, comedy, improv, design, fashion and theatre. Most notably, I am a huge cinephile and I have a crazy obsession with dance. Feel free to reach out to me for movie recommendations.</p>
 				<center>
 				<ul class="actions">
 					<li><a href="https://www.linkedin.com/in/nnicobar/" class="button" class="fa fa-2x fa-linkedin" target="_blank"></a></li>
