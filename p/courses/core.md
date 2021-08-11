@@ -179,9 +179,14 @@ show_tile: false
     <td class="tg-0pky">4</td>
   </tr>
   <tr>
-    <td class="tg-0pky"><a href="core/sem3/ee224.html">EE 224</a></td>
-    <td class="tg-0pky">Digital Systems</td>
-    <td class="tg-0pky">6</td>
+    <td class="tg-0pky"><a href="core/sem4/ph231.html">PH 231</a></td>
+    <td class="tg-0pky">Electronics Lab I (Basic Circuits)</td>
+    <td class="tg-0pky">3</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="core/sem4/ph233.html">PH 233</a></td>
+    <td class="tg-0pky">Electronics Lab II (Op-amp Circuits)</td>
+    <td class="tg-0pky">3</td>
   </tr>
   <tr>
     <td class="tg-0pky"></td>
@@ -207,19 +212,19 @@ show_tile: false
     <td class="tg-0pky">8</td>
   </tr>
   <tr>
-    <td class="tg-0pky"><a href="core/sem4/ph231.html">PH 231</a></td>
-    <td class="tg-0pky">Electronics Lab I (Basic Circuits)</td>
-    <td class="tg-0pky">3</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky"><a href="core/sem4/ph233.html">PH 233</a></td>
-    <td class="tg-0pky">Electronics Lab II (Op-amp Circuits)</td>
-    <td class="tg-0pky">3</td>
-  </tr>
-  <tr>
     <td class="tg-0pky"><a href="core/sem4/ph232.html">PH 232</a></td>
     <td class="tg-0pky">General Physics Lab</td>
     <td class="tg-0pky">3</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="core/sem3/ee224.html">EE 224</a></td>
+    <td class="tg-0pky">Digital Systems</td>
+    <td class="tg-0pky">6</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><a href="core/sem5/ph230.html">PH 230</a></td>
+    <td class="tg-0pky">Electronics Lab III (Digital Electronics)</td>
+    <td class="tg-0pky">5</td>
   </tr>
   <tr>
     <td class="tg-0pky"></td>
@@ -248,11 +253,6 @@ show_tile: false
     <td class="tg-0pky"><a href="./hss.html">HS 3xx</a></td>
     <td class="tg-0pky">HSS Core Course</td>
     <td class="tg-0pky">6</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky"><a href="core/sem5/ph230.html">PH 230</a></td>
-    <td class="tg-0pky">Electronics Lab III (Digital Electronics)</td>
-    <td class="tg-0pky">5</td>
   </tr>
   <tr>
     <td class="tg-0pky"><a href="core/sem5/ph435.html">PH 435</a></td>
