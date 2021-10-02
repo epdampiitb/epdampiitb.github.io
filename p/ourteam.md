@@ -101,24 +101,25 @@ show_tile: true
 			</div>
 		</div>
 	</section>
-	<!--section>
+	<section>
 		<a href="generic.html" class="image" target="_blank">
-			<img src="{% link assets/images/pic08.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/roshni.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Roshni Singh</h3>
 				</header>
-				<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+				<p>Just your everyday absent-minded Physics lover,  Schrodinger's cat has the key to my heart, (and simultaneously doesn't). I love conversations on almost anything ranging from capitalism, communism and the cosmos to History, Hemmingway and hippos having sensitive skin. And I love listening to people talk about their experiences and thoughts.  On most days, you'll find me annoying my friends with the worst puns (those are the best kind :P). On a rainy day, you'll find me curled up with a novel, a cup of coffee and indie music. I'm a closeted singer and dancer who writes poems and fills up a scrapbook to deal with my emotions. Favourite sport? Literally anything with a racquet -( badminton, tennis, squash or TT).</p>
 				<center>
 				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
+					<li><a href="mailto:roshnisingh171@gmail.com" class="button" class="fa fa-2x fa-envelope" target="_blank"></a></li>
+					<li><a href="https://www.linkedin.com/in/roshni-singh-8b232919a/" class="button" class="fa fa-2x fa-linkedin" target="_blank"></a></li>
 				</ul>
 				</center>
 			</div>
 		</div>
-	</section-->
+	</section>
 	<section>
 		<a href="mailto:anaida.k.ali@gmail.com" class="image">
 			<img src="{% link assets/images/team/anaida.jpg %}" alt="" data-position="center center" />
