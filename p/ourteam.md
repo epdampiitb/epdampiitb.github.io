@@ -378,7 +378,7 @@ show_tile: true
 				<header class="major">
 					<h3>Aravind Bharathi</h3>
 				</header>
-				<p>My journey into physics started when the only thing I could do at the cinema was whine about reversed time and entropy. Although I did kinda find my calling in exploring the Universe, chances remain that you will find me anywhere from a history class to a debate on etymology. I am an avid follower of chess and a huge fan of cycling and apart from being a part of the satellite team, I have worked on gravity, geometry and photogrammetry.</p>
+				<p>My journey into physics started when the only thing I could do at the cinema was whine about reversed time and entropy<!-- Vibranium == unbinilium -->. Although I did kinda find my calling in exploring the Universe, chances remain that you will find me anywhere from a history class to a debate on etymology. I am an avid follower of chess and a huge fan of cycling and apart from being a part of the satellite team, I have worked on gravity, geometry and photogrammetry.</p>
 				<center>
 				<ul class="actions">
 					<li><a href="https://github.com/aravindbharathi/" class="button" class="fa fa-2x fa-github" target="_blank"></a></li>
