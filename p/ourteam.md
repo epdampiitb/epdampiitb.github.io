@@ -32,7 +32,7 @@ show_tile: true
 	<section>
 
 		<a href="mailto:dampcep@gmail.com" class="image">
-			<img src="{% link assets/images/team/shreyas.JPG %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/mehul.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -57,7 +57,7 @@ show_tile: true
 
 	<section>
 		<a href="mailto:agnipratim.nag@gmail.com" class="image">
-			<img src="{% link assets/images/team/yuktee.jpg %}" alt="" data-position="top center" />
+			<img src="{% link assets/images/team/agni.jpg %}" alt="" data-position="top center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -70,7 +70,7 @@ show_tile: true
 					<li><a href="mailto:agnipratim.nag@gmail.com" class="button" class="fa fa-2x fa-envelope" target="_blank"></a></li>
 					<li><a href="https://www.linkedin.com/in/agnipratim-nag/" class="button" class="fa fa-2x fa-linkedin" target="_blank"></a></li>
 					<li><a href="https://www.instagram.com/_agni._/" class="button" class="fa fa-2x fa-instagram" target="_blank"></a></li>
-					<li><a href="https://agnipratimnag.github.io" class="button" class="fa fa-2x fa-github" target="_blank"></a></li>
+					<li><a href="https://agnipratimnag.github.io" class="button" class="fa fa-2x fa-link" target="_blank"></a></li>
 				</ul>
 				</center>
 			</div>
@@ -84,7 +84,7 @@ show_tile: true
 
 	<section>
 		<a href=" mailto:200260005@iitb.ac.in " class="image" target="_blank">
-			<img src="{% link assets/images/team/abhishek.jpg %}" alt="" data-position="25% 25%" />
+			<img src="{% link assets/images/team/tarak.jpg %}" alt="" data-position="25% 25%" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -108,7 +108,7 @@ show_tile: true
 	
 	<section>
 		<a href=" mailto:aneesh.kamat4@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/sahas.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/aneesh.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -129,15 +129,15 @@ show_tile: true
 
 	<section>
 		<a  class="image" target="_blank">
-			<img src="{% link assets/images/team/roshni.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/tambade.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Atharv Tambade</h3>
 				</header>
-				<p>"Hello! I am Atharv an EP thirdie from Sangli. I am a complete movie buff, tennis and cricket fan. I also like to do sky watching through my personal telescope. I am  also a part of satellite team. My areas of interest in physics include astronomy, biophysics, and nonlinear dynamics. . 
-                (Fun fact about me: I can watch each and every ball of a test match without getting bored"</p>
+				<p>Hello! I am Atharv an EP thirdie from Sangli. I am a complete movie buff, tennis and cricket fan. I also like to do sky watching through my personal telescope. I am  also a part of satellite team. My areas of interest in physics include astronomy, biophysics, and nonlinear dynamics. . 
+                (Fun fact about me: I can watch each and every ball of a test match without getting bored</p>
 				<center>
 				<ul class="actions">
 					<li><a href="mailto:atharvtambade@gmail.com" class="button" class="fa fa-2x fa-envelope" target="_blank"></a></li>
@@ -153,7 +153,7 @@ show_tile: true
 
 	<section>
 		<a href="mailto:datharva902@gmail.com" class="image">
-			<img src="{% link assets/images/team/anaida.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/deshpande.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -175,7 +175,7 @@ show_tile: true
 	
 	<section>
 		<a href="mailto:devashishshahdc19103@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/kaushik.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/devashish.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -198,7 +198,7 @@ show_tile: true
 
 	<section>
 		<a href="mailto:harshpujare@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/drishti.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/pujare.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -223,7 +223,7 @@ show_tile: true
 
 	<section>
 		<a href="mailto:navdhab1701@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/sachin.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/navdha.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -244,7 +244,7 @@ show_tile: true
 	
 	<section>
 		<a href="mailto:210260038@iitb.ac.in" class="image">
-			<img src="{% link assets/images/team/aneesh.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/pal.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -270,7 +270,7 @@ show_tile: true
 
 	<section>
 		<a href="mailto:paritoshhegde@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/mahadevan.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/paritosh.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -295,7 +295,7 @@ show_tile: true
 
 	<section>
 		<a href="mailto:210260042@iitb.ac.in" class="image" target="_blank">
-			<img src="{% link assets/images/team/mithil.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/ram.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -307,6 +307,7 @@ show_tile: true
 				<center>
 				<ul class="actions">
 				<li><a href="mailto:210260042@iitb.ac.in" class="button" class="fa fa-2x fa-envelope" target="_blank"></a></li>
+				<li><a href="https://www.instagram.com/_ram.prakash_08/" class="button" class="fa fa-2x fa-instagram" target="_blank"></a></li>
 					
 				</ul>
 				</center>
@@ -318,24 +319,24 @@ show_tile: true
 	
 	<section>
 		<a href="mailto:rehmatsinghchawla@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/priyam.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/rehmat.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
 					<h3>Rehmat Singh Chawla</h3>
 				</header>
-				<p>"Heyo, I'm Rehmat, a Physics student with an year before y’all get rid of me.
+				<p>Heyo, I'm Rehmat, a Physics student with an year before y’all get rid of me.
 					I’m a sucker for Maths and theoretical Physics, but also coffee and poetry.
 					You may know me through my more popular aliases of Bread and Green05,
 					But if not, pleased to make your acquaintance, I do hope we vibe.
-					You can find me at Literati events or napping in the computer lab or, on a great day, reading manga at Cafe ’92. Treat yourself to more slices of me at the links below - I recommend my website, everything else is kinda dead."</p>
+					You can find me at Literati events or napping in the computer lab or, on a great day, reading manga at Cafe ’92. Treat yourself to more slices of me at the links below - I recommend my website, everything else is kinda dead.</p>
 				<center>
 				<ul class="actions">
 				<li><a href="mailto:rehmatsinghchawla@gmail.com" class="button" class="fa fa-2x fa-envelope" target="_blank"></a></li>
 					<li><a href="https://www.instagram.com/yerawizardmidoriya/" class="button" class="fa fa-2x fa-instagram" target="_blank"></a></li>
 					<li><a href=" https://www.linkedin.com/in/rehmat-singh-chawla-25b513221/" class="button" class="fa fa-2x fa-linkedin" target="_blank"></a></li>
-					<li><a href="https://r-bread.github.io/" class="button" class="fa fa-2x fa-github" target="_blank"></a></li>
+					<li><a href="https://r-bread.github.io/" class="button" class="fa fa-2x fa-link" target="_blank"></a></li>
 					
 				</ul>
 				</center>
@@ -346,7 +347,7 @@ show_tile: true
 <!-- Shashwat Chakraborty -->
 	<section>
 		<a href="mailto:shashwatchakraborty@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/shourish.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/shashwat.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -369,7 +370,7 @@ show_tile: true
 
 	<section>
 		<a href="mailto:sasureshraiitb@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/harshit.jpeg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/shravya.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -393,7 +394,7 @@ show_tile: true
 	
 	<section>
 		<a href="mailto:gurjarshubham64@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/vaishnav.jpg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/gurjar.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -404,8 +405,9 @@ show_tile: true
 				<center>
 				<ul class="actions">
 				<li><a href="mailto:gurjarshubham64@gmail.com" class="button" class="fa fa-2x fa-envelope" target="_blank"></a></li>
+				<li><a href="https://www.linkedin.com/in/shubham-gurjar-6600761a8" class="button" class="fa fa-2x fa-linkedin" target="_blank"></a></li>
 					
-		  	<li><a href="https://www.linkedin.com/in/shubham-gurjar-6600761a8" class="button  class="fa fa-2x fa-linkedin" target="_blank"></a></li>
+		  	<!-- <li><a href="https://www.linkedin.com/in/shubham-gurjar-6600761a8" class="button  class="fa fa-2x fa-linkedin" target="_blank"></a></li> -->
 					
 					
 				</ul>
@@ -418,7 +420,7 @@ show_tile: true
 
 	<section>
 		<a href="mailto:shubhamingale2303@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/nabeel.JPG %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/ingale.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -443,7 +445,7 @@ show_tile: true
 
 	<section>
 		<a href="mailto:argetlam2995@gmail.com " class="image" target="_blank">
-			<img src="{% link assets/images/team/aravind.jpeg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/sid.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -455,7 +457,7 @@ I love Maths and Physics and Coding and Biology and History and... Frankly, ther
 				<center>
 				<ul class="actions">
 				<li><a href="mailto:argetlam2995@gmail.com" class="button" class="fa fa-2x fa-envelope" target="_blank"></a></li>
-					
+				</ul>
 				</center>
 			</div>
 		</div>
@@ -465,7 +467,7 @@ I love Maths and Physics and Coding and Biology and History and... Frankly, ther
 
 	<section>
 		<a href="mailto:210040153@iitb.ac.in" class="image" target="_blank">
-			<img src="{% link assets/images/team/aravind.jpeg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/siyona.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -478,6 +480,7 @@ I love Maths and Physics and Coding and Biology and History and... Frankly, ther
 				<li><a href="mailto:210040153@iitb.ac.in" class="button" class="fa fa-2x fa-envelope" target="_blank"></a></li>
 					<li><a href="https://www.linkedin.com/in/siyona-bansal-402a68222" class="button" class="fa fa-2x fa-linkedin" target="_blank"></a></li>
 					<li><a href=" https://www.instagram.com/_siyona_/" class="button" class="fa fa-2x fa-instagram" target="_blank"></a></li>
+					</ul>
 				</center>
 			</div>
 		</div>
@@ -489,7 +492,7 @@ I love Maths and Physics and Coding and Biology and History and... Frankly, ther
 
 	<section>
 		<a href="mailto:ntina2081@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/aravind.jpeg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/tina.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -505,6 +508,7 @@ I'm a bookworm and love curling up with a good read. When I'm not lost in a book
 					<li><a href=" https://www.instagram.com/tinaggarg/" class="button" class="fa fa-2x fa-instagram" target="_blank"></a></li>
 					<li><a href=" https://www.youtube.com/@tinagarg" class="button" class="fa fa-2x fa-youtube" target="_blank"></a></li>
 					<li><a href=" https://twitter.com/tinaggarg" class="button" class="fa fa-2x fa-twitter" target="_blank"></a></li>
+					</ul>
 				</center>
 			</div>
 		</div>
@@ -514,7 +518,7 @@ I'm a bookworm and love curling up with a good read. When I'm not lost in a book
 
 	<section>
 		<a href="mailto:yashasvib1409@gmail.com" class="image" target="_blank">
-			<img src="{% link assets/images/team/aravind.jpeg %}" alt="" data-position="center center" />
+			<img src="{% link assets/images/team/yashasvi.jpg %}" alt="" data-position="center center" />
 		</a>
 		<div class="content">
 			<div class="inner">
@@ -525,7 +529,7 @@ I'm a bookworm and love curling up with a good read. When I'm not lost in a book
 				<center>
 				<ul class="actions">
 				<li><a href="mailto:yashasvib1409@gmail.com" class="button" class="fa fa-2x fa-envelope" target="_blank"></a></li>
-					
+					</ul>
 				</center>
 			</div>
 		</div>
