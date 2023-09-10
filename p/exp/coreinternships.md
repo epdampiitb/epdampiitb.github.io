@@ -31,6 +31,8 @@ Please provide a brief description of your interview: <br>
  How was your overall experience? Any pieces of advice for the juniors who are aiming for research internships?: <br>
  It was amazing! The group is super super nice and helpful, we got a lot of new research done, and the prof is very helpful and supportive. <br> <br>
 
+ <hr>
+
  
 
 Name: Shashwat Chakraborty<br>
@@ -44,6 +46,8 @@ Please provide a brief description of your interview: <br>
  How was your overall experience? Any pieces of advice for the juniors who are aiming for research internships?: <br>
 My experience at Caltech was pretty good. My Faculty mentor (Prof. Marco Bernardi), Graduate mentor, and Postdoc mentor were all very kind and helpful. I worked on "First Principles Calculation of Spin Spectra of Magnetic Systems." My only advice for the juniors is to start apping early (like in mid-September) and trust the process. You may not get any positive responses initially but don't lose hope and keep going, as sometimes it may take as many as 100 emails to get one positive response. <br> <br>
 
+ <hr>
+
 Name: Adhyyan<br>
 	Field of Internship: Research in Atomic and Molecular Physics <br>
         Name of the University: Tata institute of Fundamental Research, Mumbai <br>
@@ -56,7 +60,7 @@ Please provide a brief description of your interview: <br>
 It was great to learn from the PhDs, prefer labs with multiple PhDs working on different projects and it'll give you an idea of multiple projects. interaction with profs can become limited depending on their involvement in the daily lab activities but discussions were always fruitful. Keep your options open and do not be dismissive of opportunities, even if something isn't 100% aligning with your interest working on a project with good people will always be very helpful to your personally and professionally. <br> <br>
 
 
-
+ <hr>
 
  Name: Devashish Shah<br>
 	Field of Internship: Spin Qubits in Germanium<br>
