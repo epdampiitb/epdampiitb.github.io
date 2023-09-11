@@ -19,9 +19,9 @@ show_tile: false
 
 <!-- Content -->
 <p>
-	Name: Harshda Saxena<br>
-	Field of Internship: Theoretical cosmology<br>
-        Name of the University: Heidelberg University <br>
+	Name: <b>Harshda Saxena</b><br>
+	Field of Internship: <b>Theoretical cosmology</b><br>
+        Name of the University: <b>Heidelberg University</b> <br>
 	How did you get the internship?: PT Cell <br><br>
 
 Please provide a brief description of your interview: <br>
@@ -35,9 +35,9 @@ Please provide a brief description of your interview: <br>
 
  
 
-Name: Shashwat Chakraborty<br>
-	Field of Internship: Theoretical Condensed Matter Physics<br>
-        Name of the University: Californian Institute of Technology (Caltech) <br>
+Name: <b>Shashwat Chakraborty</b><br>
+	Field of Internship: <b>Theoretical Condensed Matter Physics</b><br>
+        Name of the University: <b>Californian Institute of Technology (Caltech) </b><br>
 	How did you get the internship?:External Apping (Summer Undergraduate Research Program)<br><br>
 
 Please provide a brief description of your interview: <br>
@@ -48,9 +48,9 @@ My experience at Caltech was pretty good. My Faculty mentor (Prof. Marco Bernard
 
  <hr>
 
-Name: Adhyyan<br>
-	Field of Internship: Research in Atomic and Molecular Physics <br>
-        Name of the University: Tata institute of Fundamental Research, Mumbai <br>
+Name: <b>Adhyyan</b><br>
+	Field of Internship:<b> Research in Atomic and Molecular Physics </b><br>
+        Name of the University: <b>Tata institute of Fundamental Research, Mumbai</b> <br>
 	How did you get the internship?: External apping <br><br>
 
 Please provide a brief description of your interview: <br>
@@ -62,9 +62,9 @@ It was great to learn from the PhDs, prefer labs with multiple PhDs working on d
 
  <hr>
 
- Name: Devashish Shah<br>
-	Field of Internship: Spin Qubits in Germanium<br>
-        Name of the University:Institute of Science and Technology, Austria <br>
+ Name: <b>Devashish Shah</b><br>
+	Field of Internship:<b> Spin Qubits in Germanium</b><br>
+        Name of the University:<b>Institute of Science and Technology, Austria</b> <br>
 	How did you get the internship?: External Apping <br><br>
 
 Please provide a brief description of your interview: <br>
