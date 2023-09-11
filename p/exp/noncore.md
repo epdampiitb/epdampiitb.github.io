@@ -18,9 +18,9 @@ show_tile: false
 		</header>
 
 <!-- Content -->
-<p>Name: Kaustav Prasad<br>
-   Profile: Data Science Intern<br>
-   Company: Microsoft<br><br>
+<p>Name:<b> Kaustav Prasad</b><br>
+   Profile: <b>Data Science Intern</b><br>
+   Company: <b>Microsoft</b><br><br>
 
    What was the prep you did before the interview, and for how long?: <br>
    Had been doing competitive programming and data analysis and ML projects since freshie year; regularly practised DSA and aptitude tests from 2 months before interview <br><br>
