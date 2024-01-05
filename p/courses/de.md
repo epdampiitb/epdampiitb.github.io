@@ -18,6 +18,6 @@ show_tile: false
 		</header>
 
 <!-- Content -->
-<p><a href="de/falldelist.html">Fall Semester</a></p>
+<p><a href="de/falldelist.html">Autumn Semester</a></p>
 
 <p><a href="de/springdelist.html">Spring Semester</a></p>
