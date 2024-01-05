@@ -48,17 +48,17 @@ show_tile: false
     
 
    <tr>
-    <td class="tg-0pky"><a href="p\courses\core\review\h517.html">PH 517</a></td>
+    <td class="tg-0pky"><a href="core\review\h517.html">PH 517</a></td>
     <td class="tg-0pky">Methods in Analytical Techniques</td>
     
   </tr>
    <tr>
-    <td class="tg-0pky"><a href="p\courses\core\review\ph505.html">PH 505</a></td>
+    <td class="tg-0pky"><a href="core\review\ph505.html">PH 505</a></td>
     <td class="tg-0pky">Intro to nuclear and particle Physics</td>
     
   </tr>
    <tr>
-    <td class="tg-0pky"><a href="p\courses\core\review\ph515.html">PH 515</a></td>
+    <td class="tg-0pky"><a href="core\review\ph515.html">PH 515</a></td>
     <td class="tg-0pky">Introduction to Atomic and Molecular Physics</td>
     
 
