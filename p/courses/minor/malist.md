@@ -48,8 +48,8 @@ In any case, it’ll help you develop a rigorous and abstract way of thinking, w
 			<br>Taken by Prof.Sandip Singh (2022-23 Autumn)</h4>
 			<h5>Prerequisite</h5>
 			<p>None</p>
-			<h5>Course Constent</h5>
-			<p></p>
+			<h5>Course Content</h5>
+			<p>Review of basic concepts of real numbers: Archimedean property, Completeness.Metric spaces, compactness, connectedness, (with emphasis on Rn).Continuity and uniform continuity.Monotonic functions, Functions of bounded variation; Absolutely continuous functions. Derivatives of functions and Taylor`s theorem. Riemann integral and its properties, characterization of Riemann integrable functions. Improper integrals, Gamma functions.Sequences and series of functions, uniform convergence and its relation to continuity, differentiation and integration. Fourier series, pointwise convergence, Fejer`s theorem, Weierstrass approximation theorem.</p>
 			<h5>Grading Scheme</h5>
 			<p>2x10 for quizzes <br> 30 for midsem <br> 50 for endsem
 			</p>
@@ -60,8 +60,8 @@ In any case, it’ll help you develop a rigorous and abstract way of thinking, w
 			<br>Taken by Prof.Sandip Singh (2022-23 Spring)</h4>
 			<h5>Prerequisite</h5>
 			<p>Real Analysis</p>
-			<h5>Course Constent</h5>
-			<p></p>
+			<h5>Course Content</h5>
+			<p>Prerequisites: MA 403 (Real Analysis) Topological Spaces: open sets, closed sets, neighbourhoods, bases, sub bases, limit points, closures, interiors, continuous functions, homeomorphisms. Examples of topological spaces: subspace topology, product topology, metric topology, order topology. Quotient Topology: Construction of cylinder, cone, Moebius band, torus, etc. Connectedness and Compactness: Connected spaces, Connected subspaces of the real line, Components and local connectedness, Compact spaces, Heine-Borel Theorem, Local -compactness. Separation Axioms: Hausdorff spaces, Regularity, Complete Regularity, Normality, Urysohn Lemma, Tychonoff embedding and Urysohn Metrization Theorem, Tietze Extension Theorem. Tychnoff Theorem, One-point Compactification.Complete metric spaces and function spaces, Characterization of compact metric spaces, equicontinuity, Ascoli-Arzela Theorem, Baire Category Theorem. Applications: space filling curve, nowhere differentiable continuous function. Optional Topics: Topological Groups and orbit spaces, Paracompactness and partition of unity, Stone-Cech Compactification, Nets and filters</p>
 			<h5>Grading Scheme</h5>
 			<p>2x10 for quizzes <br> 30 for midsem <br> 50 for endsem
 			</p>
@@ -72,8 +72,8 @@ In any case, it’ll help you develop a rigorous and abstract way of thinking, w
 			<br>Taken by Prof.Preeti Raman (2023-24 Autumn)</h4>
 			<h5>Prerequisite</h5>
 			<p>Real Analysis</p>
-			<h5>Course Constent</h5>
-			<p></p>
+			<h5>Course Content</h5>
+			<p>Review of basics: Equivalence relations and partitions, Division algorithm for integers, primes, unique factorization, congruences, Chinese Remainder Theorem, Euler ϕ-function.Permutations, sign of a permutation, inversions, cycles and transpositions. Rudiments of rings and fields, elementary properties, polynomials in one and several variables, divisibility, irreducible polynomials, Division algorithm, Remainder Theorem, Factor Theorem, Rational Zeros Theorem, Relation between the roots and coefficients, Newton`s Theorem on symmetric functions, Newton`s identities, Fundamental Theorem of AlgebraRational functions, partial fraction decomposition, unique factorization of polynomials in several variables, Resultants and discriminants. Groups, subgroups and factor groups, Lagrange`s Theorem, homomorphisms, normal subgroups. Quotients of groups, Basic examples of groups: symmetric groups, matrix groups, group of rigid motions of the plane and finite groups of motions. Cyclic groups, generators and relations, Cayley`s Theorem, group actions, Sylow Theorems. Direct products, Structure Theorem for finite abelian groups.Simple groups and solvable groups, nilpotent groups, simplicity of alternating groups, composition series, Jordan-Holder Theorem. Semidirect products. Free groups, free abelian groups. Rings, Examples (including polynomial rings, formal power series rings, matrix rings and group rings), ideals, prime and maximal ideals, rings of fractions, Chinese Remainder Theorem for pairwise comaximal ideals. Euclidean Domains, Principal Ideal Domains and Unique Factorization Domains. Polynomial rings over UFD`s</p>
 			<h5>Grading Scheme</h5>
 			<p>The course total was 50 <br>7 for a group presentation <br>8 for a take-home quiz<br>15 for midsem<br>20 for endsem</p>
 			<h5>Overview</h5>
@@ -83,8 +83,8 @@ In any case, it’ll help you develop a rigorous and abstract way of thinking, w
 			<br>Taken by Prof.Sandeep Singh (2023-24 Spring)</h4>
 			<h5>Prerequisite</h5>
 			<p>None</p>
-			<h5>Course Constent</h5>
-			<p></p>
+			<h5>Course Content</h5>
+			<p>Complex numbers and the point at infinity. Analytic functions. Cauchy-Riemann conditions. Mappings by elementary functions. Riemann surfaces. Conformal mappings.Contour integrals, Cauchy-Goursat Theorem. Uniform convergence of sequences and series. Taylor and Laurent series. Isolated singularities and residues. Evaluation of real integrals. Zeroes and poles, Maximum Modulus Principle, Argument Principle, Rouche`s theorem</p>
 			<h5>Grading Scheme</h5>
 			<p></p>
 			<h5>Overview</h5>

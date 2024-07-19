@@ -40,4 +40,10 @@ show_tile: true
 		<h3><a href="https://epdampiitb.github.io/p/exp/por.html">Positions of Responsibility</a></h3>
 		<p>Seniors talk about their PORs in different clubs and teams in the institute</p>
 	</div>
+	<div class="4u$ 12u$(medium)">
+		<h3><a href="exp/ta.html">Teaching Assistant</a></h3>
+		<p>Seniors talk about their Teaching experiences </p>
+	</div>
 </div>
+
+

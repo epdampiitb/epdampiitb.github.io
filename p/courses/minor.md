@@ -25,11 +25,15 @@ show_tile: false
 <p><a href="minor/cllist.html">Chemical Engineering</a></p>
 		
 <p><a href="minor/chlist.html">Chemistry</a></p-->
-    
+
+<p><a href="minor/cmindslist.html">Centre for Machine Intelligence and Data Science</a></p>
+
 <p><a href="minor/cslist.html">Computer Science</a></p>
 
 <p><a href="minor/eelist.html">Electrical Engineering</a></p>
-		
+
+<p><a href="minor/mgmtlist.html">Management</a></p>
+
 <p><a href="minor/malist.html">Mathematics</a></p>
 		
 <p><a href="minor/silist.html">Statistics and Informatics</a></p>
