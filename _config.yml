@@ -1,11 +1,11 @@
 # site settings
-title: D-AMP
-subtitle: Department of Physics
+title: DAMP
+subtitle: Department of Physics, IIT Bombay
 email: dampcep@gmail.com
 description: This is the DAMP blog of the Department of Physics at IIT Bombay. <br>You can find information and posts from DAMP, latest research updates <br>and informal news here.
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: # the base hostname & protocol for your site
-author:
+baseurl: "/" 
+url:
+author: EP DAMP Team
 street_address: Department of Physics, IIT Bombay
 city: Mumbai
 state: MH
@@ -17,19 +17,8 @@ phone: #(716) 555-5555
 tiles-source: pages # accepts "posts" or "pages"
 tiles-count: 6
 
-# social settings (key must match name of font awesome icon)
-# see https://fontawesome.com/icons?d=gallery&p=2&s=brands
-# Icons are not shown if value is empty
-# You need to restart jekyll for changes to have an effect
 socials:
   GitHub: https://github.com/epdampiitb
-  GitLab:
-  Google-Plus: #https://plus.google.com/u/0/+AndrewBanchich
-  Instagram:
-  LinkedIn: #https://www.linkedin.com/in/andrew-banchich-a4ba1195
-  Twitter: #https://twitter.com/andrewbanchich
-  Facebook:
-  Slack:
 
 # build settings
 markdown: kramdown
