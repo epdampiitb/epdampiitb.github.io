@@ -9,7 +9,7 @@ show_tile: true
 
 
 <hr>
-<h2>General "hi this is me"</h2>
+<h2>General</h2>
 		    
 <b><i>Where can I find the BTech/DD curriculum?</i></b>
 
