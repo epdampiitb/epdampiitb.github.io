@@ -6,16 +6,30 @@ on:
       - master
 
 jobs:
-  github-pages:
+  build-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      #- uses: helaili/jekyll-action@2.0.5
-      - uses: helaili/jekyll-action@v2
+      - uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          token: ${{ secrets.JEKYLL_PAT }}
-          target_branch: 'gh-pages'
-          jekyll_src: '.'           # optional, default is '.'
-    env:
-      JEKYLL_IMAGE: jekyll/builder:latest
+          ruby-version: '3.2' # or your required version
+          bundler-cache: true
+
+      - name: Update RubyGems
+        run: gem update --system
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
 
