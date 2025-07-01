@@ -79,3 +79,11 @@
 	@import 'layout/footer';
 	@import 'layout/wrapper';
 	@import 'layout/menu';
+
+.align-left .inner {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+  padding-left: 2rem;   /* or 3rem / 4rem as needed */
+  padding-right: 2rem;  /* keep symmetrical spacing */
+}

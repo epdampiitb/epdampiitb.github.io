@@ -2,7 +2,7 @@
 layout: post
 title: Resources
 landing-title: 'Resources'
-nav-menu: false
+nav-menu: true
 description: Use your LDAP Login to access past papers, lecture notes and other study material
 image: assets/images/Resources.png
 author: null
