@@ -88,3 +88,36 @@
   padding-left: 2rem;   /* or 3rem / 4rem as needed */
   padding-right: 2rem;  /* keep symmetrical spacing */
 }
+
+.hover-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hover-icon-wrapper .profile-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.hover-icon-wrapper .icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.hover-icon-wrapper:hover .profile-img {
+  opacity: 0.2;
+}
+
+.hover-icon-wrapper:hover .icon-overlay {
+  opacity: 1;
+}
