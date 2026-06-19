@@ -32,3 +32,4 @@ exclude:
 - LICENSE.md
 - CONTRIBUTING.md
 - README.md 
+- vendor/
