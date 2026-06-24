@@ -19,11 +19,12 @@
 		{% endfor %}
 		{% for page in site.html_pages %}
 		    {% if page.layout != "home" and page.nav-menu == true %}
-		        <li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
+		        {% if page.title == "Our Team" %}
+		        	<li><a href="{{ page.url | absolute_url }}" class="button special fit" style="background-color: white; color: black; border-color: black;">{{ page.title }}</a></li>
+		        {% else %}
+		        	<li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
+		        {% endif %}
 		    {% endif %}
 		{% endfor %}
-	</ul>
-	<ul class="actions vertical">
-		<li><a href="/p/team/team25-26.html" class="button special fit" style="background-color: white; color: black; border-color: black;">Our Team</a></li>
 	</ul>
 </nav>
