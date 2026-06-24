@@ -3,7 +3,7 @@ title: Our Team
 layout: landing
 description: Find out who your DAMP mentors and coordinators are
 image: assets/images/team_b.jpg
-nav-menu: true
+nav-menu: false
 show_tile: true
 ---
 
