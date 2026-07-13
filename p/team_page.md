@@ -13,6 +13,17 @@ show_tile: true
 	padding-right: 3em;
 }
 
+.archive-section header {
+	text-align: left;
+}
+
+.archive-section .actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: flex-start;
+}
+
 @media screen and (max-width: 736px) {
 	.archive-section .inner {
 		padding-left: 1.25em;
