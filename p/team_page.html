@@ -359,6 +359,17 @@
 	padding-right: 3em;
 }
 
+.archive-section header {
+	text-align: left;
+}
+
+.archive-section .actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: flex-start;
+}
+
 @media screen and (max-width: 736px) {
 	.archive-section .inner {
 		padding-left: 1.25em;
@@ -387,6 +398,55 @@
 <!-- Main -->
 <div id="main">
 <section id="one" class="spotlights">
+<style>
+.spotlights > section {
+	display: flex;
+	align-items: stretch;
+	gap: 2em;
+}
+
+.spotlights > section a.hover-icon-wrapper {
+	flex: 0 0 18em;
+	width: 18em;
+	max-width: 40%;
+	aspect-ratio: 1 / 1;
+	height: auto;
+	overflow: hidden;
+}
+
+.spotlights > section .profile-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.spotlights > section .content {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+@media screen and (max-width: 736px) {
+	.spotlights > section {
+		display: block;
+	}
+
+	.spotlights > section a.hover-icon-wrapper {
+		width: 100%;
+		max-width: 100%;
+		aspect-ratio: auto;
+	}
+
+	.spotlights > section .profile-img {
+		height: auto;
+	}
+
+	.spotlights > section .content {
+		width: 100%;
+	}
+}
+</style>
 
 <!-- Astitva -->
 <section>
