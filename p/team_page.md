@@ -3,7 +3,7 @@ title: Our Team
 layout: landing
 description: Find out who your DAMP mentors and coordinators are
 image: assets/images/team_b.jpg
-nav-menu: false
+nav-menu: true
 show_tile: true
 ---
 
@@ -38,7 +38,7 @@ show_tile: true
 
 <!-- Current Team -->
 
-{% include_relative team/team25-26.md %}
+{% include_relative team/team26-27.md %}
 
 <!-- Previous Teams -->
 
@@ -49,6 +49,9 @@ show_tile: true
 		</header>
 		<ul class="actions">
 			<li><a href="{{ site.baseurl }}/p/team/team23-24/" class="button">2023-24 Team</a></li>
+		</ul>
+		<ul class="actions">
+			<li><a href="{{ site.baseurl }}/p/team/team25-26/" class="button">2025-26 Team</a></li>
 		</ul>
 	</div>
 </section>
