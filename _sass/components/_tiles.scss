@@ -16,14 +16,14 @@
 				'filter 1s ease',
 				'-webkit-filter 1s ease'
 			));
-			@include padding(4em, 4em);
+			@include padding(2em, 2.5em);
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
 			cursor: default;
-			height: 40vh;
-			max-height: 40em;
-			min-height: 23em;
+			height: 24vh;
+			max-height: 15em;
+			min-height: 12em;
 			overflow: hidden;
 			position: relative;
 			width: 40%;
@@ -138,10 +138,10 @@
 
 		@include breakpoint(large) {
 			article {
-				@include padding(4em, 3em);
-				height: 30vh;
-				max-height: 30em;
-				min-height: 20em;
+				@include padding(2em, 2em);
+				height: 18vh;
+				max-height: 12em;
+				min-height: 10em;
 			}
 		}
 
