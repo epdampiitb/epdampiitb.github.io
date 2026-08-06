@@ -64,6 +64,29 @@
 				> li {
 					padding: 0;
 
+					> a.team-menu-button {
+						background-color: #fff;
+						border: 2px solid #000;
+						box-shadow: none;
+						color: #000;
+						display: block;
+						font-size: 0.8em;
+						font-weight: _font(weight-bold);
+						height: 3.5em;
+						letter-spacing: _font(letter-spacing-alt);
+						line-height: 3.5em;
+						margin: 0.5em 0 0 0;
+						text-transform: uppercase;
+
+						&:hover,
+						&:active {
+							background-color: #fff;
+							border-color: #000;
+							color: #000;
+							box-shadow: none;
+						}
+					}
+
 					> a:not(.button) {
 						border: 0;
 						border-top: solid 1px _palette(border);
