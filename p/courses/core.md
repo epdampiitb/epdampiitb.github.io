@@ -18,115 +18,87 @@ show_tile: false
 		</header>
 
 <!-- Content Try Bootstrap Accordian-->
-		
+
 <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+  details { margin-bottom: 1rem; }
+  summary { cursor: pointer; font-weight: 600; }
+  .semester-header {
+    display: block;
+    width: 100%;
+    background: #f4f7fb;
+    color: #2f4b66;
+    border: 1px solid #7f8891;
+    border-radius: 4px;
+    padding: 0.7rem 0.9rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    position: relative;
+  }
+  .semester-header::after {
+    content: "▾";
+    position: absolute;
+    right: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #4a6782;
+  }
+  details[open] .semester-header::after {
+    content: "▴";
+  }
+  details[open] .semester-header {
+    background: #e8f1fb;
+  }
+  .semester-list { padding-left: 1.2rem; margin-top: 0.4rem; }
+  .semester-list li { margin-bottom: 0.35rem; }
 </style>
-<table class="tg">
-<thead>
-  <tr>
-    <th class="tg-fymr">Course Code</th>
-    <th class="tg-fymr">Course Title</th>
-    
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-  </tr>
-  
-  <tr> 
-    <td class="tg-0pky"><a href="core/review/ph446.html">PH446</a></td>
-    <td class="tg-0pky">Physics Lab (Solid State and Nuclear Physics)</td>
-  </tr>
 
-  <tr>
-    <td class="tg-0pky"><a href="core\review\h517.html">PH517</a></td>
-    <td class="tg-0pky">Methods in Analytical Techniques</td>
-  </tr>
-  
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph505.html">PH505</a></td>
-    <td class="tg-0pky">Intro to nuclear and particle Physics</td>  
-  </tr>
+<details open>
+  <summary class="semester-header">Semester 3</summary>
+  <ul class="semester-list">
+    <li><a href="core/review/ph113_2022s.html">PH113</a> — Oscillations and Waves </li>
+    <li><a href="core/review/ph217_2023a.html">PH217</a> — Classical Mechanics (2023) Autumn</li>
+    <li><a href="core/review/ph221_2023a.html">PH221</a> — Analog Electronics (2023) Autumn</li>
+    <li><a href="core/review/ec101_2023a.html">EC101</a> — Economics (2023) Autumn</li>
+    <li><a href="core/review/mm225_2023a.html">PH227</a> — AI and Data Science (2023) Autumn</li>
+    <li> PH114 - Thermal Physics </li>
+    <li><a href="core/review/ph223_2023a.html">PH223</a> — Complex Analysis and Integral Transforms (2023) Autumn</li>
+  </ul>
+</details>
 
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph515.html">PH515</a></td>
-    <td class="tg-0pky">Introduction to Atomic and Molecular Physics</td>
-  </tr>
+<details>
+  <summary class="semester-header">Semester 4</summary>
+  <ul class="semester-list">
+    <li><a href="core/review/ph225_2023a.html">PH225</a> — Quantum Mechanics-I (2023) Autumn</li>
+    <li><a href="core/review/ph216_2023s.html">PH216</a> — Statistical Physics (2023) Spring</li>
+    <li><a href="core/review/ph222_2023s.html">PH222</a> — Digital Electronics and Microprocessors (2023) Spring</li>
+    <li><a href="core/review/ph232_2023s.html">PH232</a> — Physics Laboratory I (General Physics Lab) (2023) Spring</li>
+    <li><a href="core/review/de250_2023s.html">DE250</a> — Design Thinking and Innovation (2023) Spring</li>
+    <li href="core/review/ph444_2023s.html"> PH312 - Electromagnetic Theory (2023) </li>
+  </ul>
+</details>
 
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph223_2023a.html">PH223</a></td>
-    <td class="tg-0pky">Complex Analysis and Integral Transforms (2023) Autumn</td>
-  </tr>
+<details>
+  <summary class="semester-header">Semester 5</summary>
+  <ul class="semester-list">
+    <li><a href="core/review/ph436_2023s.html">PH436</a> — Introduction to Condensed Matter Physics (2023) Spring</li>
+    <li><a href="core/review/ph446.html">PH446</a> — Physics Lab (Solid State and Nuclear Physics)</li>
+    <li><a href="core/review/ph515.html">PH515</a> — Introduction to Atomic and Molecular Physics</li>
+  </ul>
+</details>
 
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ec101_2023a.html">EC101</a></td>
-    <td class="tg-0pky">Economics (2023) Autumn</td>
-  </tr>
+<details>
+  <summary class="semester-header">Semester 6</summary>
+  <ul class="semester-list">
+    <li><a href="core/review/ph505.html">PH505</a> — Intro to Nuclear and Particle Physics</li>
+    <li><a href="core/review/h517.html">PH517</a> — Methods in Analytical Techniques</li>
+  </ul>
+</details>
 
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph217_2023a.html">PH217</a></td>
-    <td class="tg-0pky">Classical Mechanics (2023) Autumn</td>
-  </tr>
+	</div>
+</section>
 
-  <tr>
-    <td class="tg-0pky"><a href="core\review\mm225_2023a.html">MM225 (PHXXX)</a></td>
-    <td class="tg-0pky">AI and Data Science (2023) Autumn</td>
-  </tr>
-
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph221_2023a.html">PH221</a></td>
-    <td class="tg-0pky">Analog Electronics (2023) Autumn</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph225_2023a.html">PH225</a></td>
-    <td class="tg-0pky">Quantum Mechanics-I (2023) Autumn</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph113_2022s.html">PH113</a></td>
-    <td class="tg-0pky">Oscillations and Waves (2022) Spring</td>
-  </tr>
-
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph216_2023s.html">PH216</a></td>
-    <td class="tg-0pky">Statistical Physics (2023) Spring</td>
-  </tr>
-
-  <tr>
-    <td class="tg-0pky"><a href="core\review\de250_2023s.html">DE250</a></td>
-    <td class="tg-0pky">Design Thinking and Innovation (2023) Spring</td>
-  </tr>
-
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph444_2023s.html">PH444</a></td>
-    <td class="tg-0pky">Electromagnetic Theory (2023) Spring</td>
-  </tr>
-
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph222_2023s.html">PH222</a></td>
-    <td class="tg-0pky">Digital Electronics and Microprocessors (2023) Spring</td>
-  </tr>
-
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph232_2023s.html">PH232</a></td>
-    <td class="tg-0pky">Physics Laboratory I (General Physics Lab) (2023) Spring</td>
-  </tr>
-
-  <tr>
-    <td class="tg-0pky"><a href="core\review\ph436_2023s.html">PH436</a></td>
-    <td class="tg-0pky">Introduction to Condensed Matter Physics (2023) Spring</td>
-  </tr>
-
-  <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky"></td>
-  </tr>
-		
+</div>
 
