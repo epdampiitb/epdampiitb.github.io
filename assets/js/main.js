@@ -136,6 +136,55 @@
 				}
 			});
 
+		// Custom scroll behavior for the Tiles section (#two) so all tiles fit in view.
+		// Unbind the scrolly plugin handler for this specific anchor to avoid double-handling.
+		$('a.scrolly[href="#two"]').off('click.scrolly').on('click', function(event) {
+
+			event.preventDefault();
+			var $target = $('#two');
+			if ($target.length === 0) return;
+
+			var headerH = $header.height() - 2;
+			var viewportH = $window.height();
+			var tilesH = $target.outerHeight();
+
+			// Try to resize tiles so all fit in the available viewport space.
+			var $articles = $target.find('> article');
+			var count = $articles.length;
+			if (count > 0) {
+				// Determine number of columns by counting articles in the first row (same top offset)
+				var firstTop = $articles.first().offset().top;
+				var cols = 0;
+				$articles.each(function() {
+					if (Math.abs($(this).offset().top - firstTop) < 2) cols++; else return false;
+				});
+				if (cols <= 0) cols = 1;
+				var rows = Math.ceil(count / cols);
+				var availableH = viewportH - headerH;
+				var perRowH = Math.floor(availableH / rows);
+
+				// Apply inline heights so tiles visually fit. Store original values to data attrs so we can revert later.
+				$articles.each(function() {
+					var $a = $(this);
+					if (!$a.data('orig-height')) {
+						$a.data('orig-height', $a.css('height'));
+						$a.data('orig-max-height', $a.css('max-height'));
+					}
+					$a.css({ 'height': perRowH + 'px', 'max-height': perRowH + 'px' });
+				});
+				// Recompute tilesH after resizing.
+				tilesH = $target.outerHeight();
+			}
+
+			// If tiles height is less than or equal to viewport, align top (respect header).
+			// Otherwise, align so the bottom of the tiles section matches the bottom of the viewport.
+			var scrollTo;
+			// Always align top after resizing so the section is fully visible.
+			scrollTo = $target.offset().top - headerH;
+
+			$('html,body').animate({ scrollTop: scrollTo }, 600);
+		});
+
 		// Tiles.
 			var $tiles = $('.tiles > article');
 
