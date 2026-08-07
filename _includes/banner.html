@@ -1,0 +1,37 @@
+{% comment %}
+  Opening banner. The home page gets the raytraced black hole; every
+  section page gets the same simulation that runs on its home-page tile,
+  chosen by the `sim:` key in that page's front matter.
+{% endcomment %}
+
+{% if page.layout == 'home' %}
+
+<section id="banner" class="major">
+	<canvas data-blackhole aria-hidden="true"></canvas>
+	<div class="banner-veil"></div>
+	<div class="inner">
+		<header class="major">
+			<h1 class="banner-lede">{{ page.landing-title }}</h1>
+		</header>
+		<div class="content">
+			<p>{{ site.description | strip_html | strip_newlines }}</p>
+			<ul class="actions">
+				<li><a href="#two" class="button next scrolly">Scroll down for more</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+{% elsif page.sim %}
+
+<section id="banner" class="compact">
+	<canvas data-sim="{{ page.sim }}" aria-hidden="true"></canvas>
+	<div class="banner-veil"></div>
+	<div class="inner">
+		<header class="major">
+			<h1>{{ page.title }}</h1>
+		</header>
+	</div>
+</section>
+
+{% endif %}

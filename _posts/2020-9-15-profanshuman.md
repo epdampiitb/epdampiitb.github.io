@@ -11,4 +11,4 @@ More can be found about him on his <a href="http://www.loqm.tech/" target="_blan
 
 <i>1. Tell us something about your time in IITB as an undergrad. Are there any fond memories you will never forget? How does it feel being a professor in the same college? Do you find any difference from your undergrad years? </i>
 
-Things have changed a lot from the time I was here as an undergrad. <i>[(Read More)](https://epdampiitb.github.io/p/kaleidoscope/ama/5.html)</i>
+Things have changed a lot from the time I was here as an undergrad. <i>[(Read More)]({{ '/p/kaleidoscope/ama/5.html' | relative_url }})</i>

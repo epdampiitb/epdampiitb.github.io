@@ -1,87 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 {% include head.html %}
 
-<body>
+<body class="has-banner">
 
     {% include header.html %}
 
-    <!-- Banner -->
-    <section id="banner" class="major">
-        <div class="inner">
-            <header class="major">
-                <h1>{{ page.landing-title }}</h1>
-            </header>
-            <div class="content">
-                <p style="text-transform: uppercase;">{{ site.description }}</p>
-                <ul class="actions">
-    <li>
-        <div class="button-container">
-            <img src="assets/images/cat/cat.png" alt="Black Cat" class="cat-image" onclick="goToCatWorld()">
-            <a href="#two" class="button next scrolly">Scroll down for more :)</a>
-        </div>
-    </li>
-</ul>
-        </div>
-        </div>
-    </section>
+    {% include banner.html %}
 
     <!-- Main -->
     <div id="main">
-		    
-        <!-- Two -->
-        {% include tiles.html %}
-
-        <!-- Three -->
-        <section id="three">
+        <section id="two" class="tiles-section">
             <div class="inner">
-                <header class="major">
-		    <h2><a href="p/resources.html#two">Important Links</a></h2>
-                </header>
-                <p>{{ content }}</p>
-                <ul class="actions">
-                    <li><a href="https://www.phy.iitb.ac.in/" class="button next" target="_blank">Department of Physics Website</a></li>
-		            <li><a href="https://acad.iitb.ac.in/" class="button next" target="_blank">Academic Homepage</a></li>
-		            <li><a href="https://acad.iitb.ac.in/academics/calendar-and-timetable" class="button next" target="_blank">Academic Calendar</a></li>
-            </ul>
+                <div class="sec-head">
+                    <h2>The Hitchhiker's Guide to Engineering Physics</h2>
+                    <p>What to take, what to read, and what the people ahead of you did with it!</p>
+                </div>
+            </div>
+            {% include tiles.html group="start" id="tiles-start" %}
+        </section>
+
+        <section id="three" class="tiles-section">
+            <div class="inner">
+                <div class="sec-head">
+                    <h2>The Common Room</h2>
+                </div>
+            </div>
+            {% include tiles.html group="more" id="tiles-more" offset=3 %}
+        </section>
+
+        <section id="essentials">
+            <div class="inner">
+                <div class="sec-head">
+                    <h2>Quick Links</h2>
+                </div>
+                {{ content }}
+                <ul class="link-cards">
+                    <li><a class="link-card is-external" href="https://www.phy.iitb.ac.in/" target="_blank" rel="noopener">
+                        <span class="k">phy.iitb.ac.in</span><span class="t">Department of Physics &nearr;</span></a></li>
+                    <li><a class="link-card is-external" href="https://acad.iitb.ac.in/" target="_blank" rel="noopener">
+                        <span class="k">acad.iitb.ac.in</span><span class="t">Academic Homepage &nearr;</span></a></li>
+                    <li><a class="link-card is-external" href="https://acad.iitb.ac.in/academics/calendar-and-timetable" target="_blank" rel="noopener">
+                        <span class="k">acad.iitb.ac.in</span><span class="t">Calendar &amp; Timetable &nearr;</span></a></li>
+                    <li><a class="link-card is-external" href="https://asc.iitb.ac.in/" target="_blank" rel="noopener">
+                        <span class="k">asc.iitb.ac.in</span><span class="t">Academic Setup (ASC) &nearr;</span></a></li>
+                </ul>
             </div>
         </section>
 
     </div>
 
-    
     {% include footer.html %}
-    
 
 </body>
-<style>
-.button-container {
-    position: relative;
-    display: inline-block;
-}
-
-.cat-image {
-    position: absolute;
-    top: -39px;
-    left: 5%;
-    transform: translateX(-50%);
-    width: 60px;
-    cursor: pointer;
-    z-index: 5;
-    transition: transform 0.3s ease;
-}
-
-.cat-image:hover {
-    transform: translateX(-50%) scale(1.2) rotate(-12deg);
-}
-
-</style>
 
 </html>
-
-<script>
-function goToCatWorld() {
-    window.location.href = 'p/games/tetris.html';
-}
-</script>

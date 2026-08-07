@@ -16,7 +16,9 @@
 		@include vendor('display', 'flex');
 		@include vendor('justify-content', 'center');
 		@include vendor('pointer-events', 'none');
-		background: transparentize(_palette(bg), 0.1);
+		background: rgba(3,12,24,0.96);
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
 		box-shadow: none;
 		height: 100%;
 		left: 0;
@@ -65,38 +67,46 @@
 					padding: 0;
 
 					> a.team-menu-button {
-						background-color: #fff;
-						border: 2px solid #000;
+						background-color: _palette(accent1);
+						border: solid 1px _palette(accent1);
+						border-radius: 999px;
 						box-shadow: none;
-						color: #000;
+						color: _palette(bg) !important;
 						display: block;
-						font-size: 0.8em;
-						font-weight: _font(weight-bold);
-						height: 3.5em;
+						font-family: _font(family-fixed);
+						font-size: 0.72em;
+						font-weight: 400;
+						height: 3.4em;
 						letter-spacing: _font(letter-spacing-alt);
-						line-height: 3.5em;
-						margin: 0.5em 0 0 0;
+						line-height: 3.3em;
+						margin: 0.85em 0 0 0;
 						text-transform: uppercase;
 
 						&:hover,
 						&:active {
-							background-color: #fff;
-							border-color: #000;
-							color: #000;
+							background-color: lighten(_palette(accent1), 8);
+							border-color: lighten(_palette(accent1), 8);
+							color: _palette(bg) !important;
 							box-shadow: none;
 						}
 					}
 
 					> a:not(.button) {
+						@include vendor('transition', 'color #{_duration(transition)} ease');
 						border: 0;
 						border-top: solid 1px _palette(border);
 						display: block;
-						font-size: 0.8em;
-						font-weight: _font(weight-bold);
-						letter-spacing: _font(letter-spacing-alt);
-						line-height: 4em;
+						font-family: _font(family);
+						font-size: 0.76em;
+						font-weight: 600;
+						letter-spacing: 0.1em;
+						line-height: 3.75em;
 						text-decoration: none;
 						text-transform: uppercase;
+
+						&:hover {
+							color: _palette(accent1) !important;
+						}
 					}
 
 					> .button {

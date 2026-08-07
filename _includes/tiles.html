@@ -1,18 +1,41 @@
-{% if 'posts' == site.tiles-source %}
-    {% assign tiles = site.posts %}
-{% elsif 'pages' == site.tiles-source %}
-    {% assign tiles = site.html_pages | where_exp: "item", "item.show_tile != false" %}
-{% endif %}
-<section id="two" class="tiles">
-  {% for tile in tiles limit:site.tiles-count %}
-  <article>
-    <span class="image">
-      <img src="{{ tile.image }}" alt="{{ tile.title }}" />
-    </span>
-    <header class="major">
-      <h3><a href="{{ tile.url  | relative_url }}" class="link">{{ tile.title }}</a></h3>
+{% comment %}
+  Renders one group of simulation tiles.
+  Usage: {% include tiles.html group="start" %}
+  Pages opt in via `tile_group:` and order within the group via `tile_order:`.
+
+  Each card is split into a framed media window holding the live simulation
+  and a solid body beneath it, so the copy never sits on top of moving
+  pixels and the simulation reads as a specimen rather than wallpaper.
+{% endcomment %}
+
+{% assign group = include.group | default: 'start' %}
+{% assign tiles = site.html_pages
+     | where_exp: "item", "item.show_tile != false"
+     | where: "tile_group", group
+     | sort: "tile_order" %}
+
+<section id="{{ include.id | default: 'two' }}" class="tiles{% if group != 'start' %} secondary{% endif %}">
+  {% for tile in tiles %}
+  {% comment %} Fall back to a rotating set so a new page never gets a blank card. {% endcomment %}
+  {% capture sim_fallback %}{% cycle 'sim': 'lorenz','pendulum','bands','slit','chladni','nbody' %}{% endcapture %}
+  {% capture accent_fallback %}{% cycle 'accent': 'amber','rose','green','cyan','violet','cyan' %}{% endcapture %}
+  {% assign sim_name = tile.sim | default: sim_fallback %}
+  {% assign sim_accent = tile.accent | default: accent_fallback %}
+  <article data-accent="{{ sim_accent }}">
+    <div class="tile-media">
+      <canvas data-sim="{{ sim_name }}" aria-hidden="true"></canvas>
+      <span class="tile-frame" aria-hidden="true"></span>
+    </div>
+    <div class="tile-body">
+      {% comment %} `plus` coerces a missing offset to 0, so the start group needs no param. {% endcomment %}
+      {% assign n = forloop.index | plus: include.offset %}
+      <h3><a href="{{ tile.url | relative_url }}" class="link">{{ tile.title }}</a></h3>
       <p>{{ tile.description }}</p>
-    </header>
+      <span class="tile-cta" aria-hidden="true">
+        {{ tile.cta | default: 'Explore' }}
+        <svg width="15" height="8" viewBox="0 0 15 8" fill="none"><path d="M0 4h13M10 1l3 3-3 3" stroke="currentColor" stroke-width="1.2"/></svg>
+      </span>
+    </div>
   </article>
   {% endfor %}
 </section>

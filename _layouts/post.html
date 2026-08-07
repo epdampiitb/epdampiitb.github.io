@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 {% include head.html %}
 
-<body>
+<body{% if page.sim %} class="has-banner"{% endif %}>
 
-    {% include header.html %} 
-    
-    
+    {% include header.html %}
+
+    {% include banner.html %}
+
+    {% include page-top.html %}
+
 <!-- Main -->
 <div id="main" class="alt">
 
 <!-- One -->
 <section id="one">
 	<div class="inner">
+		{% unless page.sim %}
 		<header class="major">
 			<h1>{{ page.title }}</h1>
+			{% if page.description %}<p>{{ page.description }}</p>{% endif %}
 		</header>
+		{% endunless %}
 		{{ content }}
 	</div>
 </section>

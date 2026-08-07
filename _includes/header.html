@@ -2,28 +2,29 @@
 <div id="wrapper">
 
 <!-- Header -->
-<header id="header"{% if page.layout == "landing" %} class="alt style2"{% endif %}{% if page.layout == "home" %} class="alt"{% endif %}>
+<header id="header"{% if page.layout == "home" or page.sim %} class="alt"{% endif %}>
 	<a href="{{ "" | absolute_url }}/" class="logo"><strong>{{ site.title }}</strong> <span>{{ site.subtitle }}</span></a>
-	<nav>
-		<a href="#menu">Menu</a>
+	<nav aria-label="Primary navigation">
+		{% for p in site.html_pages %}
+			{% if p.layout != "home" and p.nav-menu == true %}
+				<a href="{{ p.url | absolute_url }}"{% if page.url == p.url %} class="current"{% endif %}>{{ p.title }}</a>
+			{% endif %}
+		{% endfor %}
+		<a href="#menu" class="menu-toggle" aria-label="Menu"><span></span></a>
 	</nav>
 </header>
 
 <!-- Menu -->
 <nav id="menu">
 	<ul class="links">
-        {% for page in site.pages %}
-		    {% if page.layout == "home" %}
-		        <li><a href="{{ "" | absolute_url }}/">{{ page.title }}</a></li>
+        {% for p in site.pages %}
+		    {% if p.layout == "home" %}
+		        <li><a href="{{ "" | absolute_url }}/">{{ p.title }}</a></li>
 	    	{% endif %}
 		{% endfor %}
-		{% for page in site.html_pages %}
-		    {% if page.layout != "home" and page.nav-menu == true %}
-		        {% if page.title == "Our Team" %}
-		        <li><a href="{{ page.url | absolute_url }}" class="button special fit team-menu-button">{{ page.title }}</a></li>
-		        {% else %}
-		        	<li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
-		        {% endif %}
+		{% for p in site.html_pages %}
+		    {% if p.layout != "home" and p.nav-menu == true %}
+				<li><a href="{{ p.url | absolute_url }}">{{ p.title }}</a></li>
 		    {% endif %}
 		{% endfor %}
 	</ul>

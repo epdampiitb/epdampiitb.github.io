@@ -1,177 +1,252 @@
-///
-/// Forty by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Banner */
 
 	#banner {
 		@include vendor('align-items', 'center');
-		@include vendor('background-image', 'url("../images/banner.jpg")');
 		@include vendor('display', 'flex');
-		@include padding(4em, 0, (2em, 0, 0, 0));
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
+		background-color: _palette(bg);
 		border-bottom: 0 !important;
 		cursor: default;
-		height: 60vh;
-		margin-bottom: -3.25em;
-		max-height: 32em;
-		min-height: 22em;
+		min-height: 30em;
+		overflow: hidden;
+		padding: 0 !important;
 		position: relative;
-		top: -3.25em;
 
-		&:after {
-			@include vendor('transition', 'opacity #{_duration(banner)} ease');
-			@include vendor('transition-delay', '0.75s');
-			@include vendor('pointer-events', 'none');
-			background-color: _palette(bg);
-			content: '';
+		// Full-height opening banner (home page). The text sits in the
+		// lower-left so the black hole — which renders dead centre — is
+		// never covered by the copy.
+		&.major {
+			@include vendor('align-items', 'flex-end');
+			height: 100vh;
+			height: 100svh;
+			max-height: 60em;
+
+			// Scrim angled away from the centre: dark where the copy sits in
+			// the lower left, clear across the middle and upper area where
+			// the hole and the lensed wordmark are. The top band is kept
+			// narrow — just enough for the transparent header — because the
+			// wordmark rises into roughly the top 10% of the frame.
+			> .banner-veil {
+				background:
+					linear-gradient(to top right, rgba(3,9,19,0.94) 0%, rgba(3,9,19,0.52) 32%, rgba(3,9,19,0) 60%),
+					linear-gradient(to bottom, rgba(3,9,19,0.82) 0%, rgba(3,9,19,0.30) 5%, rgba(3,9,19,0) 11%, rgba(3,9,19,0) 62%, #{_palette(bg)} 100%);
+			}
+
+			> .inner {
+				padding-bottom: 5.5em !important;
+				text-align: left;
+				// Driven per-frame by the scroll dive, so no easing here.
+				transition: none;
+
+				&:before {
+					margin-left: 0;
+				}
+
+				h1.banner-lede {
+					font-size: 2.6em;
+					letter-spacing: -0.025em;
+					line-height: 1.1;
+					margin: 0;
+					max-width: 18ch;
+					text-shadow: 0 2px 26px rgba(3,9,19,0.96);
+				}
+
+				.content {
+					margin-left: 0;
+					max-width: 46ch;
+
+					> .actions {
+						@include vendor('justify-content', 'flex-start');
+					}
+				}
+			}
+
+			@include breakpoint(small) {
+				> .inner {
+					padding-bottom: 3.5em !important;
+				}
+
+				> .banner-veil {
+					background:
+						linear-gradient(to top, rgba(3,9,19,0.94) 0%, rgba(3,9,19,0.5) 38%, rgba(3,9,19,0) 70%),
+						linear-gradient(to bottom, rgba(3,9,19,0.85) 0%, rgba(3,9,19,0) 22%, rgba(3,9,19,0) 60%, #{_palette(bg)} 100%);
+				}
+			}
+		}
+
+		// Shorter banner for section pages.
+		&.compact {
+			height: 62vh;
+			max-height: 34em;
+			min-height: 22em;
+		}
+
+		// The live simulation sits behind everything.
+		> canvas {
 			display: block;
 			height: 100%;
 			left: 0;
-			opacity: 0.85;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 0;
+		}
+
+		// Keeps the headline readable over a busy simulation.
+		> .banner-veil {
+			background:
+				radial-gradient(78% 65% at 50% 43%, rgba(3,9,19,0.16) 0%, rgba(3,9,19,0.52) 62%, rgba(3,9,19,0.88) 100%),
+				linear-gradient(to bottom, rgba(3,9,19,0.88) 0%, rgba(3,9,19,0.28) 28%, rgba(3,9,19,0.15) 55%, #{_palette(bg)} 100%);
+			height: 100%;
+			left: 0;
+			pointer-events: none;
 			position: absolute;
 			top: 0;
 			width: 100%;
 			z-index: 1;
 		}
 
-		h1 {
-			font-size: 3.25em;
-		}
-
 		> .inner {
-			@include vendor('transition', (
-				'opacity 1.5s ease',
-				'transform 0.5s ease-out',
-				'filter 0.5s ease',
-				'-webkit-filter 0.5s ease'
-			));
+			@include vendor('transition', 'opacity 1.2s ease');
 			padding: 0 !important;
 			position: relative;
+			text-align: center;
 			z-index: 2;
+
+			&:before {
+				background: linear-gradient(90deg, transparent, rgba(138,221,245,0.55), transparent);
+				content: '';
+				display: block;
+				height: 1px;
+				margin: 0 auto 1.5em;
+				max-width: 12em;
+			}
 
 			.image {
 				display: none;
 			}
-
-			header {
-				width: auto;
-
-				> :first-child {
-					width: auto;
-
-					&:after {
-						max-width: 100%;
-					}
-				}
-			}
-
-			.content {
-				@include vendor('display', 'flex');
-				@include vendor('align-items', 'center');
-				margin: 0 0 _size(element-margin) 0;
-
-				> * {
-					margin-left: 1.5em;
-					margin-bottom: 0;
-				}
-
-				> :first-child {
-					margin-left: 0;
-				}
-
-				p {
-					font-size: 0.7em;
-					font-weight: _font(weight-bold);
-					letter-spacing: _font(letter-spacing-alt);
-					text-transform: uppercase;
-				}
-			}
 		}
 
-		&.major {
-			height: 75vh;
-			min-height: 30em;
-			max-height: 50em;
-
-			&.alt {
-				  opacity: 0.75;
-			}
+		.eyebrow {
+			color: _palette(accent1);
+			display: block;
+			margin-bottom: 1.4em;
+			opacity: 0.9;
 		}
 
-		&.style1 { &:after { background-color: _palette(accent1); } }
-		&.style2 { &:after { background-color: _palette(accent2); } }
-		&.style3 { &:after { background-color: _palette(accent3); } }
-		&.style4 { &:after { background-color: _palette(accent4); } }
-		&.style5 { &:after { background-color: _palette(accent5); } }
-		&.style6 { &:after { background-color: _palette(accent6); } }
+		h1 {
+			font-size: 4.05em;
+			font-weight: 500;
+			letter-spacing: -0.045em;
+			line-height: 1.01;
+			margin: 0 auto;
+			max-width: 17ch;
+			text-shadow: 0 3px 32px rgba(3,9,19,0.96);
 
-		body.is-loading & {
+			em {
+				background: linear-gradient(100deg, #{_palette(accent1)}, #{_palette(accent2)} 55%, #{_palette(accent3)});
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+				font-style: normal;
+				font-family: _font(family);
+				font-weight: 700;
+			}
+
+			// The theme underlines h1 inside header.major; not here.
 			&:after {
-				opacity: 1.0;
-			}
-
-			> .inner {
-				@include vendor('filter', 'blur(0.125em)');
-				@include vendor('transform', 'translateX(-0.5em)');
-				opacity: 0;
+				display: none !important;
 			}
 		}
 
-		@include breakpoint(large) {
-			background-attachment: scroll;
+		// Frosted, not opaque. A heavy blur carries the legibility so the
+		// fill can stay near-transparent and the simulation keeps reading
+		// through the panel. Text is lifted to near-white to compensate.
+		.content {
+			background: rgba(3,9,19,0.26);
+			border: solid 1px rgba(176,207,242,0.10);
+			border-left: solid 2px rgba(138,221,245,0.55);
+			box-shadow: none;
+			color: #f2f7fd;
+			margin: 1.8em auto 0 auto;
+			max-width: 56ch;
+			padding: 1.05em 1.35em;
+			text-align: left;
+			text-shadow: 0 1px 16px rgba(3,9,19,0.95), 0 0 3px rgba(3,9,19,0.7);
+			backdrop-filter: blur(26px) saturate(115%);
+			-webkit-backdrop-filter: blur(26px) saturate(115%);
+
+			p {
+				font-size: 1.02em;
+				font-weight: 400;
+				letter-spacing: 0.004em;
+				line-height: 1.72;
+				margin-bottom: 0;
+			}
+
+			> .actions {
+				@include vendor('justify-content', 'center');
+				margin-top: 1.5em;
+			}
+		}
+
+		// Without backdrop-filter the fill is all that separates the text
+		// from the simulation, so it has to carry the contrast itself.
+		@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+			.content {
+				background: rgba(3,9,19,0.72);
+			}
+		}
+
+		// Section pages carry the title alone over their simulation — no
+		// panel, no description. The veil plus a text shadow does the
+		// legibility work, so the simulation stays fully visible.
+		&.compact > .inner {
+			text-align: left;
+
+			// The centred hairline belongs to the home page's centred layout.
+			&:before {
+				display: none;
+			}
+
+			h1 {
+				font-size: 2.9em;
+				margin: 0;
+				max-width: none;
+				text-shadow: 0 2px 24px rgba(3,9,19,0.98), 0 0 6px rgba(3,9,19,0.85);
+			}
+
+			@include breakpoint(small) {
+				h1 { font-size: 2.1em; }
+			}
+		}
+
+		header.major {
+			margin-bottom: 0;
+
+			> :first-child:after {
+				display: none;
+			}
+		}
+
+
+		@include breakpoint(medium) {
+			h1 { font-size: 3.25em; }
 		}
 
 		@include breakpoint(small) {
-			@include padding(3em, 0, (2em, 0, 0, 0));
-			height: auto;
-			margin-bottom: -2.75em;
-			max-height: none;
-			min-height: 0;
-			top: -2.75em;
+			&.major { max-height: none; }
+			&.compact { height: 48vh; min-height: 17em; }
 
-			h1 {
-				font-size: 2em;
+			h1 { font-size: 2.45em; }
+
+			.content {
+				padding: 0.95em 1.1em;
+
+				p { font-size: 0.97em; line-height: 1.68; }
 			}
 
-			> .inner {
-				.content {
-					display: block;
+			> .inner { padding: 0 1.5em !important; }
 
-					> * {
-						margin-left: 0;
-						margin-bottom: _size(element-margin);
-					}
-				}
-			}
-
-			&.major {
-				height: auto;
-				min-height: 0;
-				max-height: none;
-			}
-		}
-
-		@include breakpoint(xsmall) {
-			@include padding(4em, 0, (2em, 0, 0, 0));
-
-			> .inner {
-				.content {
-					p {
-						br {
-							display: none;
-						}
-					}
-				}
-			}
-
-			&.major {
-				@include padding(6em, 0, (2em, 0, 0, 0));
-			}
 		}
 	}
+

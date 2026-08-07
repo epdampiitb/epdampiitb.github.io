@@ -11,4 +11,4 @@ Her current research interests are statistical signal processing of gravitationa
 
 <i>1. What do you think will be the next big thing in your field? How do you plan to be a part of it?</i>
 
-Observations of binary black hole merger events in gravitational wave window have improved our understanding of <i>[(Read More)](https://epdampiitb.github.io/p/kaleidoscope/ama/3.html)
+Observations of binary black hole merger events in gravitational wave window have improved our understanding of <i>[(Read More)]({{ '/p/kaleidoscope/ama/3.html' | relative_url }})

@@ -5,12 +5,12 @@ nav-menu: true
 description: Use your LDAP Login to access past papers, lecture notes and other study material
 image: assets/images/Resources.jpg
 show_tile: true
+sim: bands
+accent: green
+tile_group: start
+tile_order: 2
+cta: 'Get material'
 ---
-
-<!-- Floating Cat GIF Link -->
-<div id="mybox" style="position: relative;">
-  <img src="/assets/images/cat/rainbowsleepcat.gif" alt="Eepy Cat" class="floating-cat" onclick="goToCatWorld()" />
-</div>
 
 <!-- Two -->
 <section id="two">
@@ -48,25 +48,3 @@ show_tile: true
 		<li><a href="https://drive.google.com/drive/folders/1KFpaXZI5K9fmL00mpQ14FSonuIJRnz1b" target="_blank">MSc Resources #2</a></li>
 	</ul>
 
-<!-- Cat Animation Style -->
-<style>
-.floating-cat {
-  width: 100px;
-  cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transition: transform 0.2s ease;
-}
-
-.floating-cat:hover {
-  transform: scale(1.2) rotate(-2deg);
-}
-</style>
-
-<!-- JavaScript Redirect -->
-<script>
-function goToCatWorld() {
-    window.location.href = 'games/solitare.html';
-}
-</script>

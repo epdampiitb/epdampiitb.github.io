@@ -12,7 +12,9 @@ img {
 
 .image {
 		border: 0;
+		border-radius: _size(border-radius);
 		display: inline-block;
+		overflow: hidden;
 		position: relative;
 
 		img {

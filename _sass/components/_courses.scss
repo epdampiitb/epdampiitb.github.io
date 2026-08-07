@@ -1,0 +1,205 @@
+/* Course discovery — filter bar + review catalogue */
+
+	.course-filter {
+		background: _palette(panel);
+		border: solid 1px _palette(border);
+		margin-bottom: 1.5em;
+		padding: 1.25em 1.4em;
+
+		label {
+			color: _palette(fg-dim);
+			font-family: _font(family-fixed);
+			font-size: 0.6rem;
+			font-weight: 400;
+			letter-spacing: 0.16em;
+			margin-bottom: 0.5em;
+			text-transform: uppercase;
+		}
+
+		.cf-search {
+			margin-bottom: 1.1em;
+
+			input[type="search"] {
+				@include vendor('appearance', 'none');
+				background: _palette(border-bg);
+				border: solid 1px _palette(border);
+				color: inherit;
+				font-size: 1em;
+				height: 3em;
+				padding: 0 1em;
+				width: 100%;
+
+				&:focus {
+					border-color: _palette(accent1);
+					box-shadow: 0 0 0 3px rgba(138,221,245,0.14);
+				}
+			}
+		}
+
+		.cf-facets {
+			display: grid;
+			gap: 0.9em;
+			grid-template-columns: repeat(auto-fit, minmax(9.5em, 1fr));
+			align-items: end;
+		}
+
+		select {
+			background-color: _palette(bg-alt);
+			border: solid 1px _palette(border);
+			color: _palette(fg);
+			color-scheme: dark;
+			height: 2.7em;
+			width: 100%;
+
+			option {
+				background-color: _palette(bg-alt);
+				color: _palette(fg);
+			}
+
+			&:focus {
+				border-color: _palette(accent1);
+				box-shadow: 0 0 0 3px rgba(138,221,245,0.14);
+			}
+		}
+
+		.cf-reset {
+			.button {
+				margin-top: 0;
+				width: 100%;
+			}
+		}
+	}
+
+	.cf-count {
+		color: _palette(fg-dim);
+		font-family: _font(family-fixed);
+		font-size: 0.68rem;
+		letter-spacing: 0.12em;
+		margin-bottom: 1.2em;
+		text-transform: uppercase;
+	}
+
+	.cf-empty {
+		border: dashed 1px _palette(border);
+		color: _palette(fg-dim);
+		padding: 2.5em 1.5em;
+		text-align: center;
+	}
+
+	.cf-note {
+		color: _palette(fg-dim);
+		font-size: 0.85em;
+	}
+
+	.course-grid {
+		display: grid;
+		gap: 1em;
+		grid-template-columns: repeat(auto-fill, minmax(17.5em, 1fr));
+		margin-bottom: _size(element-margin);
+	}
+
+	.course-card {
+		@include vendor('transition', (
+			'border-color #{_duration(transition)} ease',
+			'background-color #{_duration(transition)} ease'
+		));
+		background: _palette(panel);
+		border: solid 1px _palette(border);
+		display: flex;
+		flex-direction: column;
+		padding: 1.1em 1.2em;
+
+		&[hidden] { display: none; }
+
+		&:hover {
+			background: _palette(panel-hover);
+			border-color: _palette(border-strong);
+		}
+
+		.cc-head {
+			@include vendor('align-items', 'center');
+			display: flex;
+			gap: 0.75em;
+			justify-content: space-between;
+			margin-bottom: 0.55em;
+		}
+
+		.cc-code {
+			color: _palette(accent1);
+			font-family: _font(family-fixed);
+			font-size: 0.72rem;
+			letter-spacing: 0.12em;
+		}
+
+		.cc-cat {
+			border: solid 1px _palette(border);
+			color: _palette(fg-dim);
+			font-family: _font(family-fixed);
+			font-size: 0.53rem;
+			letter-spacing: 0.12em;
+			padding: 0.3em 0.6em;
+			text-transform: uppercase;
+			white-space: nowrap;
+		}
+
+		.cc-cat-core { border-color: rgba(244,183,107,0.5); color: _palette(accent3); }
+		.cc-cat-de   { border-color: rgba(120,213,172,0.5); color: _palette(accent4); }
+		.cc-cat-ie   { border-color: rgba(176,154,246,0.5); color: _palette(accent2); }
+		.cc-cat-hss  { border-color: rgba(242,163,178,0.5); color: _palette(accent5); }
+
+		// Course titles carry the display serif so a card reads as a named
+		// course rather than another block of UI sans.
+		h3 {
+			font-family: _font(family-display);
+			font-size: 1.18em;
+			font-weight: 400;
+			letter-spacing: -0.015em;
+			line-height: 1.25;
+			margin-bottom: 0.75em;
+
+			a { border: 0; }
+		}
+
+		.cc-meta {
+			font-size: 0.78em;
+			margin: auto 0 0 0;
+
+			> div {
+				border-top: solid 1px _palette(border);
+				display: flex;
+				gap: 0.75em;
+				justify-content: space-between;
+				padding: 0.4em 0;
+			}
+
+			dt {
+				color: _palette(fg-dim);
+				font-family: _font(family-fixed);
+				font-size: 0.82em;
+				font-weight: 400;
+				letter-spacing: 0.1em;
+				margin: 0;
+				text-transform: uppercase;
+			}
+
+			dd {
+				margin: 0;
+				text-align: right;
+			}
+		}
+
+		.cc-unrated {
+			color: _palette(fg-light);
+			font-style: italic;
+		}
+	}
+
+	@include breakpoint(small) {
+		.course-filter .cf-facets {
+			grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+		}
+
+		.course-grid {
+			grid-template-columns: 1fr;
+		}
+	}

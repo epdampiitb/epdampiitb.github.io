@@ -1,9 +1,3 @@
-///
-/// Forty by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Wrapper */
 
 	#wrapper {
@@ -12,7 +6,7 @@
 			'-webkit-filter #{_duration(menu)} ease',
 			'opacity 0.375s ease-out'
 		));
-		padding-top: 3.25em;
+		padding-top: _size(header-height);
 
 		&.is-transitioning {
 			opacity: 0;
@@ -23,6 +17,12 @@
 		}
 
 		@include breakpoint(small) {
-			padding-top: 2.75em;
+			padding-top: 3.5rem;
 		}
+	}
+
+	// Pages that open with a full-bleed banner sit under the transparent
+	// header instead of below it.
+	body.has-banner #wrapper {
+		padding-top: 0;
 	}

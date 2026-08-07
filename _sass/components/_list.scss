@@ -63,17 +63,25 @@
 
 		&.actions {
 			cursor: default;
+			display: flex;
+			flex-wrap: wrap;
+			gap: (_size(element-margin) * 0.5);
 			list-style: none;
 			padding-left: 0;
 
 			li {
 				display: inline-block;
-				padding: 0 (_size(element-margin) * 0.5) 0 0;
+				padding: 0;
 				vertical-align: middle;
 
 				&:last-child {
 					padding-right: 0;
 				}
+			}
+
+			&.vertical, &.fit {
+				display: block;
+				gap: 0;
 			}
 
 			&.small {

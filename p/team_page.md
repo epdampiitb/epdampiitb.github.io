@@ -5,6 +5,11 @@ description: Find out who your DAMP mentors and coordinators are
 image: assets/images/team_b.jpg
 nav-menu: true
 show_tile: true
+sim: nbody
+accent: cyan
+tile_group: more
+tile_order: 3
+cta: 'Meet the team'
 ---
 
 <style>
@@ -50,19 +55,3 @@ show_tile: true
 <!-- Current Team -->
 
 {% include_relative team/team26-27.md %}
-
-<!-- Previous Teams -->
-
-<section id="archive" class="archive-section">
-	<div class="inner">
-		<header class="major">
-			<h2>Previous Teams</h2>
-		</header>
-		<ul class="actions">
-			<li><a href="{{ site.baseurl }}/p/team/team23-24/" class="button">2023-24 Team</a></li>
-		</ul>
-		<ul class="actions">
-			<li><a href="{{ site.baseurl }}/p/team/team25-26/" class="button">2025-26 Team</a></li>
-		</ul>
-	</div>
-</section>

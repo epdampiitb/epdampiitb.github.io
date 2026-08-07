@@ -1,15 +1,16 @@
-///
-/// Forty by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Box */
 
 	.box {
+		@include vendor('transition', (
+			'border-color #{_duration(transition)} ease',
+			'background-color #{_duration(transition)} ease',
+			'transform #{_duration(transition)} ease'
+		));
+		background: _palette(panel);
 		border: solid 1px _palette(border);
+		border-radius: 0;
 		margin-bottom: _size(element-margin);
-		padding: 1.5em;
+		padding: 1.75em;
 
 		> :last-child,
 		> :last-child > :last-child,
@@ -18,8 +19,57 @@
 		}
 
 		&.alt {
+			background: none;
 			border: 0;
 			border-radius: 0;
 			padding: 0;
+		}
+	}
+
+	a.box, .box.link {
+		display: block;
+
+		&:hover {
+			background: _palette(panel-hover);
+			border-color: _palette(border-strong);
+			transform: translateY(-3px);
+		}
+	}
+
+/* Card — used by the course / experience index pages.
+   Previously declared inline on those pages; defined here so every
+   card on the site shares one look. */
+
+	.card {
+		@include vendor('transition', (
+			'border-color #{_duration(transition)} ease',
+			'background-color #{_duration(transition)} ease',
+			'transform #{_duration(transition)} ease'
+		));
+		background: _palette(panel);
+		border: solid 1px _palette(border);
+		border-radius: 0;
+		display: block;
+		height: 100%;
+		margin-bottom: _size(element-margin);
+		padding: 1.75em;
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+
+		h3, h4 {
+			margin-bottom: 0.5em;
+		}
+
+		p {
+			color: _palette(fg-dim);
+			font-size: 0.95em;
+		}
+
+		&:hover {
+			background: _palette(panel-hover);
+			border-color: _palette(border-strong);
+			transform: translateY(-3px);
 		}
 	}

@@ -1,20 +1,53 @@
-///
-/// Forty by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Footer */
 
 	#footer {
+		background-color: _palette(bg-deep);
+		border-top: solid 1px _palette(border);
+
+		// Social icons. The theme's default `.icon.alt` is a solid white
+		// disc, which is far too heavy on this background, so it becomes an
+		// outlined circle that fills only on hover.
+		.icons {
+			margin-bottom: (_size(element-margin) * 0.75);
+
+			a {
+				border: 0;
+				color: _palette(fg-dim);
+			}
+
+			a.icon.alt:before {
+				@include vendor('transition', (
+					'background-color #{_duration(transition)} ease',
+					'border-color #{_duration(transition)} ease',
+					'color #{_duration(transition)} ease'
+				));
+				background-color: transparent;
+				border: solid 1px _palette(border);
+				border-radius: 50%;
+				color: _palette(fg-dim);
+				height: 2.4em;
+				line-height: 2.3em;
+				width: 2.4em;
+			}
+
+			a.icon.alt:hover:before {
+				background-color: rgba(138,221,245,0.10);
+				border-color: _palette(accent1);
+				color: _palette(accent1);
+			}
+		}
+
 		.copyright {
-			font-size: 0.8em;
+			color: _palette(fg-dim);
+			font-family: _font(family-fixed);
+			font-size: 0.68rem;
+			letter-spacing: 0.1em;
 			list-style: none;
+			margin-bottom: 0;
 			padding-left: 0;
 
 			li {
 				border-left: solid 1px _palette(border);
-				color: _palette(fg-light);
 				display: inline-block;
 				line-height: 1;
 				margin-left: 1em;
@@ -26,16 +59,21 @@
 					padding-left: 0;
 				}
 			}
+
+			a {
+				border-bottom-color: _palette(border);
+				color: _palette(accent1);
+			}
 		}
 
 		@include breakpoint(xsmall) {
 			.copyright {
 				li {
-					display: block;
 					border-left: 0;
+					display: block;
+					line-height: inherit;
 					margin-left: 0;
 					padding-left: 0;
-					line-height: inherit;
 				}
 			}
 		}

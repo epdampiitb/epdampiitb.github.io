@@ -1,0 +1,267 @@
+/* DAMP — page furniture specific to this site */
+
+/* Link cards ------------------------------------------------------------ */
+
+	.link-cards {
+		display: grid;
+		gap: 1em;
+		grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+		list-style: none;
+		margin: 0 0 _size(element-margin) 0;
+		padding-left: 0;
+
+		li { padding-left: 0; }
+	}
+
+	// Splits DAMP's own pages from outbound IITB links inside Student essentials.
+	.essentials-head {
+		border-top: solid 1px _palette(border);
+		color: _palette(fg-dim);
+		font-family: _font(family-fixed);
+		font-size: 0.62rem;
+		font-weight: 400;
+		letter-spacing: 0.2em;
+		margin: 0 0 1.2em 0;
+		padding-top: 1.6em;
+		text-transform: uppercase;
+
+		&:first-of-type {
+			border-top: 0;
+			padding-top: 0;
+		}
+	}
+
+	.link-card {
+		@include vendor('transition', (
+			'border-color #{_duration(transition)} ease',
+			'background-color #{_duration(transition)} ease',
+			'transform #{_duration(transition)} ease'
+		));
+		background: _palette(panel);
+		border: solid 1px _palette(border);
+		border-radius: _size(border-radius);
+		display: block;
+		padding: 1.4em 1.5em;
+
+		.k {
+			color: _palette(accent1);
+			display: block;
+			font-family: _font(family-fixed);
+			font-size: 0.58rem;
+			letter-spacing: 0.2em;
+			margin-bottom: 0.6em;
+			text-transform: uppercase;
+		}
+
+		.t {
+			color: _palette(fg-bold);
+			font-size: 0.98em;
+		}
+
+		&:hover {
+			background: _palette(panel-hover);
+			border-color: _palette(border-strong);
+			color: inherit !important;
+			transform: translateY(-3px);
+		}
+
+		// Outbound links are visually quieter than DAMP's own.
+		&.is-external {
+			background: transparent;
+
+			.k { color: _palette(fg-dim); }
+			.t { color: _palette(fg); }
+		}
+	}
+
+/* Section heading block ------------------------------------------------- */
+
+	.sec-head {
+		margin-bottom: (_size(element-margin) * 1.25);
+
+		.tag {
+			color: _palette(accent2);
+			display: block;
+			font-family: _font(family-fixed);
+			font-size: 0.65rem;
+			letter-spacing: 0.3em;
+			margin-bottom: 1em;
+			text-transform: uppercase;
+		}
+
+		p {
+			color: _palette(fg-dim);
+			margin-bottom: 0;
+			max-width: 62ch;
+		}
+	}
+
+/* Wrap transition ------------------------------------------------------- */
+
+	// The hero canvas is transformed per-frame by physics.js; the transform
+	// origin has to be the hole itself or the zoom drifts off centre.
+	#banner.major > canvas[data-blackhole] {
+		transform-origin: 50% 50%;
+		will-change: transform;
+	}
+
+	// The copy sits low in the frame and the hole is above it, so the pivot
+	// goes above the block — the shrink then collapses toward the hole.
+	#banner.major > .inner {
+		transform-origin: 50% -60%;
+		will-change: transform, opacity;
+	}
+
+	// Sections rise as the hero is swallowed. The class is only added by JS,
+	// so with JS off or reduced-motion on, content is simply visible.
+	.will-reveal {
+		opacity: 0;
+		transform: translate3d(0, 34px, 0) scale(0.985);
+		transition: opacity 0.7s cubic-bezier(.2,.7,.3,1),
+		            transform 0.7s cubic-bezier(.2,.7,.3,1);
+	}
+
+	.will-reveal.is-revealed {
+		opacity: 1;
+		transform: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.will-reveal {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
+
+/* Simulation canvases fade in once they start running ------------------- */
+
+	canvas[data-sim], canvas[data-blackhole] {
+		@include vendor('transition', 'opacity 0.8s ease');
+	}
+
+	.tiles .tile-media canvas[data-sim] {
+		opacity: 0;
+	}
+
+	.tiles article.sim-live .tile-media canvas[data-sim] {
+		opacity: 1;
+	}
+
+/* Wayfinding strip: breadcrumbs ---------------------------------------- */
+
+	.page-top {
+		border-bottom: solid 1px _palette(border);
+
+		> .inner {
+			padding-bottom: 1.4em !important;
+			padding-top: 1.4em !important;
+		}
+	}
+
+	.breadcrumbs {
+		ol {
+			display: flex;
+			flex-wrap: wrap;
+			list-style: none;
+			margin: 0;
+			padding-left: 0;
+		}
+
+		li {
+			color: _palette(fg-dim);
+			font-family: _font(family-fixed);
+			font-size: 0.62rem;
+			letter-spacing: 0.1em;
+			padding-left: 0;
+			text-transform: uppercase;
+
+			& + li:before {
+				content: '/';
+				margin: 0 0.6em;
+				opacity: 0.5;
+			}
+		}
+
+		a {
+			border: 0;
+			color: _palette(fg-dim);
+
+			&:hover { color: _palette(accent1) !important; }
+		}
+
+		[aria-current] {
+			color: _palette(fg-bold);
+		}
+	}
+
+
+/* Live-simulation control ---------------------------------------------- */
+
+	.sim-toggle {
+		bottom: 1.1rem;
+		position: fixed;
+		right: 1.1rem;
+		z-index: _misc(z-index-base) - 1;
+
+		&[hidden] { display: none; }
+
+		button {
+			@include vendor('align-items', 'center');
+			@include vendor('display', 'flex');
+			background: rgba(3,9,19,0.72);
+			backdrop-filter: blur(14px);
+			-webkit-backdrop-filter: blur(14px);
+			border: solid 1px _palette(border);
+			border-radius: 999px;
+			color: _palette(fg-dim);
+			font-family: _font(family-fixed);
+			font-size: 0.6rem;
+			gap: 0.55em;
+			height: auto;
+			letter-spacing: 0.14em;
+			line-height: 1;
+			padding: 0.7em 1.05em;
+			text-transform: uppercase;
+
+			&:hover {
+				border-color: _palette(border-strong);
+				color: _palette(fg-bold) !important;
+				transform: none;
+			}
+		}
+
+		.sim-toggle-dot {
+			background: _palette(accent4);
+			border-radius: 50%;
+			flex-shrink: 0;
+			height: 6px;
+			width: 6px;
+			@include vendor('animation', 'sim-pulse 2.2s ease-in-out infinite');
+		}
+
+		.sim-toggle-state {
+			color: _palette(accent4);
+		}
+
+		&.is-off {
+			.sim-toggle-dot {
+				background: _palette(fg-light);
+				animation: none;
+			}
+
+			.sim-toggle-state { color: _palette(fg-light); }
+		}
+
+		@include breakpoint(small) {
+			bottom: 0.7rem;
+			right: 0.7rem;
+
+			.sim-toggle-text { display: none; }
+		}
+	}
+
+	@include keyframes('sim-pulse') {
+		0%, 100% { opacity: 1; }
+		50%      { opacity: 0.35; }
+	}

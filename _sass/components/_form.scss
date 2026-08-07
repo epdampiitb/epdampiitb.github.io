@@ -78,8 +78,8 @@
 	textarea {
 		@include vendor('appearance', 'none');
 		background: _palette(border-bg);
-		border: none;
-		border-radius: 0;
+		border: solid 1px _palette(border);
+		border-radius: 8px;
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -92,8 +92,9 @@
 		}
 
 		&:focus {
+			background: _palette(panel-hover);
 			border-color: _palette(highlight);
-			box-shadow: 0 0 0 2px _palette(highlight);
+			box-shadow: 0 0 0 3px rgba(127,231,255,0.16);
 		}
 	}
 
@@ -126,6 +127,21 @@
 	input[type="email"],
 	select {
 		height: _size(element-height);
+	}
+
+	// The native dropdown list is painted by the browser, not by us. With a
+	// translucent fill it falls back to the light palette and the options
+	// become unreadable on this theme, so the control needs an opaque
+	// background, an explicit colour-scheme, and styled <option>s.
+	select {
+		background-color: _palette(bg-alt);
+		color: _palette(fg);
+		color-scheme: dark;
+
+		option, optgroup {
+			background-color: _palette(bg-alt);
+			color: _palette(fg);
+		}
 	}
 
 	textarea {

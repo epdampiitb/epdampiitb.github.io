@@ -1,50 +1,65 @@
-///
-/// Forty by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Table */
 
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
+		border: solid 1px _palette(border);
+		border-radius: _size(border-radius);
+		margin: 0 0 _size(element-margin) 0;
 		overflow-x: auto;
+
+		table {
+			margin: 0;
+		}
 	}
 
 	table {
+		border-collapse: collapse;
+		font-size: 0.95em;
 		margin: 0 0 _size(element-margin) 0;
 		width: 100%;
 
 		tbody {
 			tr {
-				border: solid 1px _palette(border);
-				border-left: 0;
-				border-right: 0;
+				border-bottom: solid 1px _palette(border);
+
+				&:last-child {
+					border-bottom: 0;
+				}
 
 				&:nth-child(2n + 1) {
 					background-color: _palette(border-bg);
+				}
+
+				&:hover {
+					background-color: _palette(panel-hover);
 				}
 			}
 		}
 
 		td {
-			padding: 0.75em 0.75em;
+			padding: 0.8em 1em;
+			vertical-align: top;
 		}
 
 		th {
-			color: _palette(fg-bold);
-			font-size: 0.9em;
-			font-weight: _font(weight-bold);
-			padding: 0 0.75em 0.75em 0.75em;
+			color: _palette(fg-dim);
+			font-family: _font(family-fixed);
+			font-size: 0.72em;
+			font-weight: 400;
+			letter-spacing: _font(letter-spacing-alt);
+			padding: 1em;
 			text-align: left;
+			text-transform: uppercase;
+			white-space: nowrap;
 		}
 
 		thead {
-			border-bottom: solid 2px _palette(border);
+			background: _palette(bg-alt);
+			border-bottom: solid 1px _palette(border-strong);
 		}
 
 		tfoot {
-			border-top: solid 2px _palette(border);
+			border-top: solid 1px _palette(border-strong);
 		}
 
 		&.alt {
@@ -70,12 +85,15 @@
 				}
 			}
 
-			thead {
-				border-bottom: 0;
-			}
-
-			tfoot {
-				border-top: 0;
-			}
+			thead { border-bottom: 0; }
+			tfoot { border-top: 0; }
 		}
+	}
+
+	// Tables pasted from the online table generator carry these classes.
+	// Neutralise the light-theme colours they hard-code.
+	.tg, .tg-0pky, .tg-fymr {
+		background: transparent !important;
+		border-color: _palette(border) !important;
+		color: inherit !important;
 	}

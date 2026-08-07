@@ -1,0 +1,13 @@
+{% comment %}
+  Wayfinding strip shown above deep content pages.
+{% endcomment %}
+
+{% assign segs = page.url | remove_first: '/' | remove: '.html' | split: '/' %}
+
+{% if segs.size > 1 %}
+<div class="page-top">
+	<div class="inner">
+		{% include breadcrumbs.html %}
+	</div>
+</div>
+{% endif %}

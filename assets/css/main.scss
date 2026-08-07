@@ -11,7 +11,7 @@
 @import 'libs/mixins';
 @import 'libs/skel';
 @import 'font-awesome.min.css';
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;700&family=Fraunces:opsz,wght@9..144,300..700&display=swap');
 
 
 	@include skel-breakpoints((
@@ -69,6 +69,8 @@
 	@import 'components/tiles';
 	@import 'components/contact-method';
 	@import 'components/spotlights';
+	@import 'components/damp';
+	@import 'components/courses';
 	//@import 'components/transitions';
 
 // Layout.

@@ -1,13 +1,7 @@
-///
-/// Forty by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Main */
 
 	#main {
-		background-color: _palette(bg-alt);
+		background-color: _palette(bg);
 
 		> * {
 			border-top: solid 1px _palette(border);
@@ -21,6 +15,13 @@
 
 		&.alt {
 			background-color: transparent;
-			border-bottom: solid 1px _palette(border);
+		}
+
+		// Sections alternate against a slightly raised panel so long
+		// pages have some rhythm instead of one flat slab. Scoped away
+		// from `.alt`, because several content pages nest their own
+		// `<div id="main" class="alt">` inside the layout's.
+		&:not(.alt) > section:nth-child(2n):not(.tiles) {
+			background-color: _palette(bg-alt);
 		}
 	}

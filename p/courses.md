@@ -5,13 +5,17 @@ description: Course Reviews for Core Courses, Minors and Electives
 image: assets/images/courses.jpg
 nav-menu: true
 show_tile: true
+sim: lorenz
+accent: amber
+tile_group: start
+tile_order: 1
+cta: 'Browse reviews'
 ---
 
 <!-- Main -->
 <div id="main" class="alt">
 
-<!-- Content -->
-<p>Course reviews have been sorted by course category. For more information about the categories and tagging rules please refer to the booklets given in <a href="resources.html">resources tab</a></p>
+<p><a href="courses/browse.html" class="button special">Search all reviews</a></p>
 
 
 <div class="row">

@@ -1,38 +1,74 @@
-///
-/// Forty by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Basic */
 
-	// MSIE: Required for IEMobile.
-		@-ms-viewport {
-			width: device-width;
-		}
+	@-ms-viewport {
+		width: device-width;
+	}
 
-	// MSIE: Prevents scrollbar from overlapping content.
-		body {
-			-ms-overflow-style: scrollbar;
-		}
+	body {
+		-ms-overflow-style: scrollbar;
+	}
 
-	// Ensures page width is always >=320px.
-		@include breakpoint(xsmall) {
-			html, body {
-				min-width: 320px;
-			}
+	@include breakpoint(xsmall) {
+		html, body {
+			min-width: 320px;
 		}
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html { scroll-behavior: auto; }
+		*, *:before, *:after {
+			animation-duration: 0.001ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.001ms !important;
+		}
+	}
 
 	body {
 		background: _palette(bg);
+		overflow-x: hidden;
 
-		// Prevents animation/transition "flicker" on page load.
-		// Automatically added/removed by js/main.js.
-			&.is-loading {
-				*, *:before, *:after {
-					@include vendor('animation', 'none !important');
-					@include vendor('transition', 'none !important');
-				}
+		&.is-loading {
+			*, *:before, *:after {
+				@include vendor('animation', 'none !important');
+				@include vendor('transition', 'none !important');
 			}
+		}
+	}
 
+	::selection {
+		background: rgba(127,231,255,0.25);
+		color: _palette(fg-bold);
+	}
+
+	:focus-visible {
+		outline: 2px solid _palette(accent1);
+		outline-offset: 3px;
+	}
+
+	// Thin dark scrollbar to match the theme.
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: rgba(150,190,255,0.22) transparent;
+	}
+
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: _palette(bg-deep);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: rgba(150,190,255,0.20);
+		border-radius: 10px;
+
+		&:hover {
+			background: rgba(150,190,255,0.35);
+		}
 	}

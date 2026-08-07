@@ -1,0 +1,28 @@
+{% comment %}
+  Breadcrumbs derived from the URL. Each ancestor segment is looked up in
+  site.pages; segments that are bare directories (/p/, .../review/) have no
+  page of their own and are simply skipped, which is what you want here.
+{% endcomment %}
+
+{% assign segs = page.url | remove_first: '/' | remove: '.html' | split: '/' %}
+
+{% if segs.size > 1 %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+	<ol>
+		<li><a href="{{ '/' | relative_url }}">Home</a></li>
+		{% assign acc = '' %}
+		{% for s in segs %}
+			{% assign acc = acc | append: '/' | append: s %}
+			{% assign target = acc | append: '.html' %}
+			{% if forloop.last %}
+				<li><span aria-current="page">{{ page.title }}</span></li>
+			{% else %}
+				{% assign match = site.pages | where: 'url', target | first %}
+				{% if match %}
+				<li><a href="{{ target | relative_url }}">{{ match.title }}</a></li>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</ol>
+</nav>
+{% endif %}

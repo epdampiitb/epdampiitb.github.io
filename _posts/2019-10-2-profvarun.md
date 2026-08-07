@@ -12,4 +12,4 @@ This is the link to an interview he gave sometime back as a part of the:
 
 <i>1. Can you explain your current work in brief?</i>
 
-Our group builds new instruments and uses them to study explosions across the universe. <i>[(Read More)](https://epdampiitb.github.io/p/kaleidoscope/ama/4.html)</i>
+Our group builds new instruments and uses them to study explosions across the universe. <i>[(Read More)]({{ '/p/kaleidoscope/ama/4.html' | relative_url }})</i>

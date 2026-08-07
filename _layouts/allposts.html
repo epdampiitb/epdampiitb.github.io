@@ -1,34 +1,31 @@
 <!DOCTYPE html>
-<!--
-    Forty by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-  -->
-<html>
+<html lang="en">
 
   {% include head.html %}
 
-  <body>
+  <body{% if page.sim %} class="has-banner"{% endif %}>
 
-    {% include header.html %} 
-    
-    
+    {% include header.html %}
+
+    {% include banner.html %}
+
     <!-- Main -->
     <div id="main" class="alt">
 
       <!-- One -->
       <section id="one">
-	<div class="inner">
+        <div class="inner">
           {% for post in site.posts %}
-	  {% if post.title != 404 %}
-	  <header class="major">
-	    <h1>{{ post.title }}</h1>
-	  </header>
-	  {% if post.image %}<span class="image main"><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></span>{% endif %}
-	  <p>{{ post.content }}</p>
-	  {% endif %}
+            {% if post.title != 404 %}
+              <header class="major">
+                <h1>{{ post.title }}</h1>
+              </header>
+              {% if post.image %}<span class="image main"><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></span>{% endif %}
+              {{ post.content }}
+              <hr class="major" />
+            {% endif %}
           {% endfor %}
-	</div>
+        </div>
       </section>
 
     </div>

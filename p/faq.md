@@ -5,12 +5,12 @@ description: Anything you might need to know about credits, minors, honours etc.
 image: assets/images/FAQ.jpg
 nav-menu: true
 show_tile: true
+sim: slit
+accent: cyan
+tile_group: more
+tile_order: 1
+cta: 'Find answers'
 ---
-
-<!-- Floating Cat GIF Link -->
-<div id="mybox" style="position: relative;">
-  <img src="/assets/images/cat/fishwater.gif" alt="Fish" class="floating-cat" onclick="goToCatWorld()" />
-</div>
 
 <h2>General</h2>
 		    
@@ -111,25 +111,3 @@ Sit-Through – Courses from any dept. for which you do not register but attend 
 
 <i>Compiled by: Shobhna Misra</i>
 
-<!-- Cat Animation Style -->
-<style>
-.floating-cat {
-  width: 150px;
-  cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transition: transform 0.2s ease;
-}
-
-.floating-cat:hover {
-  transform: scale(1.2) rotate(-2deg);
-}
-
-</style>
-<!-- JavaScript Redirect -->
-<script>
-function goToCatWorld() {
-    window.location.href = 'games/fish.html';
-}
-</script>

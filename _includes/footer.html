@@ -2,6 +2,9 @@
 <section id="contact">
 	<div class="inner">
 		<section>
+			<header class="major">
+				<h2>We'd love to hear from you!</h2>
+			</header>
 			<form action="https://formspree.io/{{ site.formspree }}" method="POST">
 				<div class="field half first">
 					<label for="name">Name</label>
@@ -41,7 +44,7 @@
 					    {{ site.city }},
 					{% endif %}
 					{% if site.state %}
-					    {{ site.state }} 
+					    {{ site.state }}
 					{% endif %}
 					{% if site.zip_code %}
 					    {{ site.zip_code }}<br />
@@ -59,7 +62,7 @@
 <!-- Footer -->
 	<footer id="footer">
 		<div class="inner">
-			<!--ul class="icons">
+			<ul class="icons">
 				{% for key_value in site.socials %}
 					{% if key_value[1] %}
 						<li>
@@ -69,16 +72,21 @@
 						</li>
 					{% endif %}
 				{% endfor %}
-			</ul-->
+			</ul>
 			<ul class="copyright">
-				<li>&copy; {{ site.title }} {{ site.subtitle }}</li>
-				<!--li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
-				<li>Jekyll integration: <a href="http://andrewbanchi.ch" target="_blank">Andrew Banchich</a></li-->
-
+				<li>Crafted with love by the &copy; EP {{ site.title }} Web Team</li>
 			</ul>
 		</div>
 	</footer>
 
+</div>
+
+<div class="sim-toggle" id="sim-toggle" hidden>
+	<button type="button" aria-pressed="true">
+		<span class="sim-toggle-dot" aria-hidden="true"></span>
+		<span class="sim-toggle-text">Live simulation</span>
+		<span class="sim-toggle-state">on</span>
+	</button>
 </div>
 
 <!-- Scripts -->
@@ -88,4 +96,6 @@
 	<script src="{{ "assets/js/skel.min.js" | absolute_url }}"></script>
 	<script src="{{ "assets/js/util.js" | absolute_url }}"></script>
 	<!--[if lte IE 8]><script src="{{ "assets/js/ie/respond.min.js" | absolute_url }}"></script><![endif]-->
-	<script src="{{ "assets/js/main.js" | absolute_url }}?v={{ site.time | date: '%s' }}"></script>
+	<script src="{{ "assets/js/main.js" | absolute_url }}"></script>
+	<script src="{{ "assets/js/physics.js" | absolute_url }}" defer></script>
+	{% if page.course_filter %}<script src="{{ "assets/js/course-filter.js" | absolute_url }}" defer></script>{% endif %}
