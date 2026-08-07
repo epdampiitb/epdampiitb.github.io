@@ -136,76 +136,16 @@
 				}
 			});
 
-		// Custom scroll behavior for the Tiles section (#two) so all tiles fit in view.
-		// Unbind the scrolly plugin handler for this specific anchor to avoid double-handling.
-		$('a.scrolly[href="#two"]').off('click.scrolly').on('click', function(event) {
-
-			event.preventDefault();
-			var $target = $('#two');
-			if ($target.length === 0) return;
-
-			var headerH = $header.height() - 2;
-			var viewportH = $window.height();
-			var tilesH = $target.outerHeight();
-
-			// Try to resize tiles so all fit in the available viewport space.
-			var $articles = $target.find('> article');
-			var count = $articles.length;
-			if (count > 0) {
-				// Determine number of columns by counting articles in the first row (same top offset)
-				var firstTop = $articles.first().offset().top;
-				var cols = 0;
-				$articles.each(function() {
-					if (Math.abs($(this).offset().top - firstTop) < 2) cols++; else return false;
-				});
-				if (cols <= 0) cols = 1;
-				var rows = Math.ceil(count / cols);
-				var availableH = viewportH - headerH;
-				var perRowH = Math.floor(availableH / rows);
-
-				// Apply inline heights so tiles visually fit. Store original values to data attrs so we can revert later.
-				$articles.each(function() {
-					var $a = $(this);
-					if (!$a.data('orig-height')) {
-						$a.data('orig-height', $a.css('height'));
-						$a.data('orig-max-height', $a.css('max-height'));
-					}
-					$a.css({ 'height': perRowH + 'px', 'max-height': perRowH + 'px' });
-				});
-				// Recompute tilesH after resizing.
-				tilesH = $target.outerHeight();
-			}
-
-			// If tiles height is less than or equal to viewport, align top (respect header).
-			// Otherwise, align so the bottom of the tiles section matches the bottom of the viewport.
-			var scrollTo;
-			// Always align top after resizing so the section is fully visible.
-			scrollTo = $target.offset().top - headerH;
-
-			$('html,body').animate({ scrollTop: scrollTo }, 600);
-		});
-
 		// Tiles.
+		// Tiles are now backed by a live <canvas> simulation (see physics.js)
+		// rather than a background image, so only the whole-tile click
+		// target is set up here.
 			var $tiles = $('.tiles > article');
 
 			$tiles.each(function() {
 
 				var $this = $(this),
-					$image = $this.find('.image'), $img = $image.find('img'),
-					$link = $this.find('.link'),
-					x;
-
-				// Image.
-
-					// Set image.
-						$this.css('background-image', 'url(' + $img.attr('src') + ')');
-
-					// Set position.
-						if (x = $img.data('position'))
-							$image.css('background-position', x);
-
-					// Hide original.
-						$image.hide();
+					$link = $this.find('.link');
 
 				// Link.
 					if ($link.length > 0) {
@@ -281,11 +221,16 @@
 				var $this = $(this),
 					$image = $this.find('.image'), $img = $image.find('img');
 
+				// Banners driven by a <canvas> simulation must not get a
+				// background image or parallax — both would sit on top of it.
+					if ($this.find('canvas').length > 0)
+						return;
+
 				// Parallax.
 					$this._parallax(0.275);
 
 				// Image.
-					if ($image.length > 0) {
+					if ($img.length > 0 && $img.attr('src')) {
 
 						// Set image.
 							$this.css('background-image', 'url(' + $img.attr('src') + ')');
@@ -320,26 +265,95 @@
 
 			};
 
+			// Accessibility: the menu is a modal dialog, so it has to expose
+			// its open state, move focus in on open, restore it on close, and
+			// keep Tab inside itself while it is open.
+			var $menuToggle = $('a.menu-toggle'),
+				menuReturnFocus = null;
+
+			$menu.attr({
+				'id': 'menu',
+				'role': 'dialog',
+				'aria-modal': 'true',
+				'aria-label': 'Site menu',
+				'aria-hidden': 'true'
+			});
+			$menuToggle.attr({ 'aria-controls': 'menu', 'aria-expanded': 'false' });
+
+			function menuFocusable() {
+				return $menu.find('a[href], button:not(:disabled)').filter(':visible');
+			}
+
+			$menu._setState = function(open) {
+
+				$menu.attr('aria-hidden', open ? 'false' : 'true');
+				$menuToggle.attr('aria-expanded', open ? 'true' : 'false');
+
+				if (open) {
+					menuReturnFocus = document.activeElement;
+					window.setTimeout(function() {
+						var $f = menuFocusable();
+						if ($f.length)
+							$f.first().trigger('focus');
+					}, 60);
+				}
+				else if (menuReturnFocus && menuReturnFocus.focus) {
+					menuReturnFocus.focus();
+					menuReturnFocus = null;
+				}
+
+			};
+
 			$menu._show = function() {
 
-				if ($menu._lock())
+				if ($menu._lock()) {
 					$body.addClass('is-menu-visible');
+					$menu._setState(true);
+				}
 
 			};
 
 			$menu._hide = function() {
 
-				if ($menu._lock())
+				if ($menu._lock()) {
 					$body.removeClass('is-menu-visible');
+					$menu._setState(false);
+				}
 
 			};
 
 			$menu._toggle = function() {
 
-				if ($menu._lock())
+				if ($menu._lock()) {
 					$body.toggleClass('is-menu-visible');
+					$menu._setState($body.hasClass('is-menu-visible'));
+				}
 
 			};
+
+			// Keep Tab cycling inside the open menu.
+			$menu.on('keydown', function(event) {
+
+				if (event.keyCode != 9 || !$body.hasClass('is-menu-visible'))
+					return;
+
+				var $f = menuFocusable();
+				if (!$f.length)
+					return;
+
+				var first = $f.first()[0],
+					last = $f.last()[0];
+
+				if (event.shiftKey && document.activeElement === first) {
+					event.preventDefault();
+					last.focus();
+				}
+				else if (!event.shiftKey && document.activeElement === last) {
+					event.preventDefault();
+					first.focus();
+				}
+
+			});
 
 			$menuInner
 				.on('click', function(event) {
