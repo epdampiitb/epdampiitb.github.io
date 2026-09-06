@@ -47,9 +47,10 @@
 
 			span {
 				color: _palette(fg-dim);
-				font-family: _font(family-fixed);
-				font-size: 0.58rem;
-				letter-spacing: 0.12em;
+				font-family: _font(family);
+				font-size: 0.6rem;
+				font-weight: 600;
+				letter-spacing: 0.1em;
 				text-transform: uppercase;
 				white-space: nowrap;
 			}

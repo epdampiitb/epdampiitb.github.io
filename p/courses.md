@@ -12,9 +12,6 @@ tile_order: 1
 cta: 'Browse reviews'
 ---
 
-<!-- Main -->
-<div id="main" class="alt">
-
 <p><a href="courses/browse.html" class="button special">Search all reviews</a></p>
 
 

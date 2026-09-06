@@ -31,7 +31,7 @@
 			}
 
 			a.icon.alt:hover:before {
-				background-color: rgba(138,221,245,0.10);
+				background-color: rgba(0,242,254,0.10);
 				border-color: _palette(accent1);
 				color: _palette(accent1);
 			}
@@ -39,9 +39,10 @@
 
 		.copyright {
 			color: _palette(fg-dim);
-			font-family: _font(family-fixed);
-			font-size: 0.68rem;
-			letter-spacing: 0.1em;
+			font-family: _font(family);
+			font-size: 0.7rem;
+			font-weight: 500;
+			letter-spacing: 0.04em;
 			list-style: none;
 			margin-bottom: 0;
 			padding-left: 0;

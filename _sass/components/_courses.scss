@@ -8,10 +8,10 @@
 
 		label {
 			color: _palette(fg-dim);
-			font-family: _font(family-fixed);
-			font-size: 0.6rem;
-			font-weight: 400;
-			letter-spacing: 0.16em;
+			font-family: _font(family);
+			font-size: 0.64rem;
+			font-weight: 600;
+			letter-spacing: 0.1em;
 			margin-bottom: 0.5em;
 			text-transform: uppercase;
 		}
@@ -31,7 +31,7 @@
 
 				&:focus {
 					border-color: _palette(accent1);
-					box-shadow: 0 0 0 3px rgba(138,221,245,0.14);
+					box-shadow: 0 0 0 3px rgba(0,242,254,0.14);
 				}
 			}
 		}
@@ -58,7 +58,7 @@
 
 			&:focus {
 				border-color: _palette(accent1);
-				box-shadow: 0 0 0 3px rgba(138,221,245,0.14);
+				box-shadow: 0 0 0 3px rgba(0,242,254,0.14);
 			}
 		}
 
@@ -72,9 +72,10 @@
 
 	.cf-count {
 		color: _palette(fg-dim);
-		font-family: _font(family-fixed);
-		font-size: 0.68rem;
-		letter-spacing: 0.12em;
+		font-family: _font(family);
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
 		margin-bottom: 1.2em;
 		text-transform: uppercase;
 	}
@@ -111,9 +112,23 @@
 
 		&[hidden] { display: none; }
 
+		// Each card is tinted by its category — the code, the chip and the
+		// title's hover underline all share one colour.
+		&[data-category="core"] { --cc-accent: #{_palette(accent3)}; }
+		&[data-category="de"]   { --cc-accent: #{_palette(accent4)}; }
+		&[data-category="ie"]   { --cc-accent: #{_palette(accent2)}; }
+		&[data-category="hss"]  { --cc-accent: #{_palette(accent5)}; }
+
 		&:hover {
 			background: _palette(panel-hover);
 			border-color: _palette(border-strong);
+
+			h3 a {
+				text-decoration: underline;
+				text-decoration-color: var(--cc-accent, #{_palette(accent1)});
+				text-decoration-thickness: 1px;
+				text-underline-offset: 0.16em;
+			}
 		}
 
 		.cc-head {
@@ -125,24 +140,26 @@
 		}
 
 		.cc-code {
-			color: _palette(accent1);
-			font-family: _font(family-fixed);
-			font-size: 0.72rem;
-			letter-spacing: 0.12em;
+			color: var(--cc-accent, #{_palette(accent1)});
+			font-family: _font(family);
+			font-size: 0.75rem;
+			font-weight: 600;
+			letter-spacing: 0.08em;
 		}
 
 		.cc-cat {
 			border: solid 1px _palette(border);
 			color: _palette(fg-dim);
-			font-family: _font(family-fixed);
-			font-size: 0.53rem;
-			letter-spacing: 0.12em;
-			padding: 0.3em 0.6em;
+			font-family: _font(family);
+			font-size: 0.58rem;
+			font-weight: 600;
+			letter-spacing: 0.08em;
+			padding: 0.32em 0.62em;
 			text-transform: uppercase;
 			white-space: nowrap;
 		}
 
-		.cc-cat-core { border-color: rgba(244,183,107,0.5); color: _palette(accent3); }
+		.cc-cat-core { border-color: rgba(247,169,74,0.5); color: _palette(accent3); }
 		.cc-cat-de   { border-color: rgba(120,213,172,0.5); color: _palette(accent4); }
 		.cc-cat-ie   { border-color: rgba(176,154,246,0.5); color: _palette(accent2); }
 		.cc-cat-hss  { border-color: rgba(242,163,178,0.5); color: _palette(accent5); }
@@ -160,37 +177,33 @@
 			a { border: 0; }
 		}
 
-		.cc-meta {
-			font-size: 0.78em;
-			margin: auto 0 0 0;
-
-			> div {
-				border-top: solid 1px _palette(border);
-				display: flex;
-				gap: 0.75em;
-				justify-content: space-between;
-				padding: 0.4em 0;
-			}
-
-			dt {
-				color: _palette(fg-dim);
-				font-family: _font(family-fixed);
-				font-size: 0.82em;
-				font-weight: 400;
-				letter-spacing: 0.1em;
-				margin: 0;
-				text-transform: uppercase;
-			}
-
-			dd {
-				margin: 0;
-				text-align: right;
-			}
+		// Meta sits at the foot: the professor as the human anchor, then one
+		// quiet readout line for term / sem / dept. No table, no per-row
+		// rules, no "not rated" filler.
+		.cc-foot {
+			border-top: solid 1px _palette(border);
+			margin-top: auto;
+			padding-top: 0.9em;
 		}
 
-		.cc-unrated {
-			color: _palette(fg-light);
-			font-style: italic;
+		.cc-prof {
+			color: _palette(fg);
+			font-size: 0.9em;
+			margin: 0;
+		}
+
+		.cc-prof + .cc-ctx {
+			margin-top: 0.4em;
+		}
+
+		.cc-ctx {
+			color: _palette(fg-dim);
+			font-family: _font(family);
+			font-size: 0.72rem;
+			font-weight: 500;
+			letter-spacing: 0.04em;
+			margin: 0;
+			text-transform: uppercase;
 		}
 	}
 

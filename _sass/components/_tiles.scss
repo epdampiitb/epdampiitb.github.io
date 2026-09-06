@@ -25,7 +25,7 @@
 		background-color: transparent !important;
 		border-top: 0 !important;
 		display: grid;
-		gap: 1.25em;
+		gap: 1.5em;
 		grid-template-columns: repeat(3, 1fr);
 		padding: 0 !important;
 
@@ -48,7 +48,8 @@
 			overflow: hidden;
 			position: relative;
 
-			// Accent hairline across the top edge, drawn on hover.
+			// The section's colour, stated once: a quiet accent line that
+			// grows in from the left on hover. No frame, no brackets.
 			&:before {
 				@include vendor('transition', 'transform 0.45s cubic-bezier(.2,.7,.3,1)');
 				background: var(--tile-accent, #{_palette(accent1)});
@@ -65,12 +66,14 @@
 
 			> .image { display: none; }
 
-			/* media window holding the simulation */
+			/* The simulation sits in a slightly deeper well and dissolves
+			   into the body beneath it, so it reads as atmosphere behind the
+			   writing rather than a specimen pinned inside a box. */
 			.tile-media {
-				background: #05070e;
+				background: _palette(bg-deep);
 				flex-shrink: 0;
 				overflow: hidden;
-				padding-bottom: 62%;          // aspect box
+				padding-bottom: 60%;          // aspect box
 				position: relative;
 				width: 100%;
 
@@ -82,39 +85,15 @@
 					top: 0;
 					width: 100%;
 				}
-			}
 
-			// Corner ticks — reads as an instrument window rather than a photo.
-			.tile-frame {
-				bottom: 0.7em;
-				left: 0.7em;
-				pointer-events: none;
-				position: absolute;
-				right: 0.7em;
-				top: 0.7em;
-				z-index: 2;
-
-				&:before, &:after {
-					border-color: var(--tile-accent, #{_palette(accent1)});
-					content: '';
-					height: 0.7em;
-					opacity: 0.75;
-					position: absolute;
-					width: 0.7em;
-				}
-
-				&:before {
-					border-left: solid 1px;
-					border-top: solid 1px;
-					left: 0;
-					top: 0;
-				}
-
+				// Soft seam into the copy — no hard edge. Hue-matched to
+				// bg-alt so the fade never greys out.
 				&:after {
-					border-bottom: solid 1px;
-					border-right: solid 1px;
-					bottom: 0;
-					right: 0;
+					background: linear-gradient(to bottom, rgba(22,31,48,0) 60%, #{_palette(bg-alt)} 100%);
+					content: '';
+					inset: 0;
+					pointer-events: none;
+					position: absolute;
 				}
 			}
 
@@ -123,26 +102,17 @@
 				display: flex;
 				flex-direction: column;
 				flex-grow: 1;
-				padding: 1.5em 1.6em 1.6em;
+				padding: 1.6em 1.7em 1.7em;
 				position: relative;
-			}
-
-			.tile-index {
-				color: var(--tile-accent, #{_palette(accent1)});
-				font-family: _font(family-fixed);
-				font-size: 0.58rem;
-				letter-spacing: 0.18em;
-				margin-bottom: 0.9em;
-				opacity: 0.85;
 			}
 
 			h3 {
 				font-family: _font(family-display);
-				font-size: 1.35em;
+				font-size: 1.4em;
 				font-weight: 400;
-				letter-spacing: -0.02em;
-				line-height: 1.18;
-				margin-bottom: 0.5em;
+				letter-spacing: -0.015em;
+				line-height: 1.2;
+				margin-bottom: 0.45em;
 
 				a {
 					border: 0;
@@ -152,30 +122,45 @@
 
 			p {
 				color: _palette(fg-dim);
-				font-size: 0.87em;
-				line-height: 1.62;
-				margin-bottom: 1.4em;
+				font-size: 0.9em;
+				line-height: 1.65;
+				margin-bottom: 1.15em;
 			}
 
-			// Pill call to action, pinned to the bottom so cards line up.
+			// An editorial link you can follow, not a caged button: the
+			// section colour, sentence case, with an arrow and an underline
+			// that draws itself as the card is entered.
 			.tile-cta {
 				@include vendor('align-items', 'center');
 				@include vendor('transition', (
-					'border-color #{_duration(transition)} ease',
 					'color #{_duration(transition)} ease',
-					'background-color #{_duration(transition)} ease'
+					'gap #{_duration(transition)} ease'
 				));
 				align-self: flex-start;
-				border: solid 1px _palette(border-strong);
-				color: _palette(fg);
+				color: var(--tile-accent, #{_palette(accent1)});
 				display: inline-flex;
-				font-family: _font(family-fixed);
-				font-size: 0.6rem;
-				gap: 0.85em;
-				letter-spacing: 0.14em;
+				font-family: _font(family);
+				font-size: 0.92em;
+				font-weight: 500;
+				gap: 0.5em;
+				letter-spacing: 0;
 				margin-top: auto;
-				padding: 0.85em 1.3em;
-				text-transform: uppercase;
+				position: relative;
+				text-transform: none;
+
+				&:after {
+					background: currentColor;
+					bottom: -0.18em;
+					content: '';
+					height: 1px;
+					left: 0;
+					opacity: 0.55;
+					position: absolute;
+					right: 0;
+					transform: scaleX(0);
+					transform-origin: left;
+					transition: transform 0.35s cubic-bezier(.2,.7,.3,1);
+				}
 
 				svg { @include vendor('transition', 'transform 0.3s ease'); }
 			}
@@ -198,11 +183,11 @@
 				&:before { transform: scaleX(1); }
 
 				.tile-cta {
-					background-color: rgba(138,221,245,0.10);
-					border-color: var(--tile-accent, #{_palette(accent1)});
-					color: _palette(fg-bold);
+					gap: 0.75em;
 
-					svg { transform: translateX(4px); }
+					&:after { transform: scaleX(1); }
+
+					svg { transform: translateX(3px); }
 				}
 			}
 
@@ -219,9 +204,10 @@
 			&[data-accent="rose"]   { --tile-accent: #{_palette(accent5)}; }
 		}
 
-		/* -- primary group ----------------------------------------------- */
-		// Courses runs the full width as a horizontal banner: simulation on
-		// one side, copy on the other. The other two sit beneath it.
+		/* -- primary group: an editorial spread -------------------------- */
+		// The lead tile runs full width: the simulation on the left dissolves
+		// into a centred column of copy on the right. The other two sit
+		// beneath it as ordinary cards.
 
 		&:not(.secondary) {
 			grid-template-columns: repeat(2, 1fr);
@@ -229,24 +215,41 @@
 			> article:first-child {
 				display: grid;
 				grid-column: 1 / -1;
-				grid-template-columns: 1.05fr 1fr;
-				min-height: 21em;
+				grid-template-columns: 1.1fr 1fr;
+				min-height: 22em;
 
 				.tile-media {
 					height: 100%;
 					padding-bottom: 0;
+
+					// Dissolve rightward, into the copy.
+					&:after {
+						background: linear-gradient(to right, rgba(22,31,48,0) 58%, #{_palette(bg-alt)} 100%);
+					}
 				}
 
 				.tile-body {
 					@include vendor('justify-content', 'center');
-					padding: 2.4em 2.6em;
+					padding: 2.6em 3em;
 				}
 
-				h3 { font-size: 2.1em; }
+				h3 {
+					font-size: 2.3em;
+					letter-spacing: -0.02em;
+					margin-bottom: 0.5em;
+				}
 
 				p {
-					font-size: 0.97em;
-					max-width: 44ch;
+					font-size: 1.02em;
+					line-height: 1.7;
+					margin-bottom: 1.5em;
+					max-width: 42ch;
+				}
+
+				// Follows the writing; never stranded at a far bottom edge.
+				.tile-cta {
+					font-size: 1em;
+					margin-top: 0;
 				}
 			}
 		}
@@ -254,20 +257,19 @@
 		/* -- secondary group --------------------------------------------- */
 
 		&.secondary {
-			.tile-media { padding-bottom: 48%; }
+			.tile-media { padding-bottom: 52%; }
 
-			.tile-body { padding: 1.25em 1.35em 1.35em; }
+			.tile-body { padding: 1.4em 1.5em 1.5em; }
 
-			h3 { font-size: 1.12em; }
+			h3 { font-size: 1.15em; }
 
 			p {
-				font-size: 0.82em;
-				margin-bottom: 1.15em;
+				font-size: 0.85em;
+				margin-bottom: 1.1em;
 			}
 
 			.tile-cta {
-				font-size: 0.55rem;
-				padding: 0.7em 1.1em;
+				font-size: 0.85em;
 			}
 		}
 
@@ -278,16 +280,25 @@
 				grid-template-columns: 1fr;
 				min-height: 0;
 
-				.tile-media { padding-bottom: 52%; }
+				.tile-media {
+					padding-bottom: 52%;
 
-				.tile-body { padding: 1.6em 1.7em; }
+					// Stacked now, so the seam returns to the bottom.
+					&:after {
+						background: linear-gradient(to bottom, rgba(22,31,48,0) 60%, #{_palette(bg-alt)} 100%);
+					}
+				}
 
-				h3 { font-size: 1.6em; }
+				.tile-body { padding: 1.9em 2em; }
+
+				h3 { font-size: 1.75em; }
+
+				p { font-size: 0.96em; }
 			}
 		}
 
 		@include breakpoint(small) {
-			gap: 0.9em;
+			gap: 1em;
 			grid-template-columns: 1fr !important;
 
 			> article:first-child {

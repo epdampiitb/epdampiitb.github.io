@@ -1,11 +1,11 @@
 /* DAMP — page furniture specific to this site */
 
-/* Link cards ------------------------------------------------------------ */
+/* Reference index ------------------------------------------------------- */
+// Outbound links read as a ruled reference list — a reading desk, not a grid
+// of boxes. Title on the left, the domain as a quiet mono label on the right.
 
-	.link-cards {
-		display: grid;
-		gap: 1em;
-		grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+	.ref-index {
+		border-top: solid 1px _palette(border);
 		list-style: none;
 		margin: 0 0 _size(element-margin) 0;
 		padding-left: 0;
@@ -13,64 +13,62 @@
 		li { padding-left: 0; }
 	}
 
-	// Splits DAMP's own pages from outbound IITB links inside Student essentials.
-	.essentials-head {
-		border-top: solid 1px _palette(border);
-		color: _palette(fg-dim);
-		font-family: _font(family-fixed);
-		font-size: 0.62rem;
-		font-weight: 400;
-		letter-spacing: 0.2em;
-		margin: 0 0 1.2em 0;
-		padding-top: 1.6em;
-		text-transform: uppercase;
-
-		&:first-of-type {
-			border-top: 0;
-			padding-top: 0;
-		}
-	}
-
-	.link-card {
+	.ref-link {
+		@include vendor('align-items', 'baseline');
 		@include vendor('transition', (
-			'border-color #{_duration(transition)} ease',
-			'background-color #{_duration(transition)} ease',
-			'transform #{_duration(transition)} ease'
+			'color #{_duration(transition)} ease',
+			'border-color #{_duration(transition)} ease'
 		));
-		background: _palette(panel);
-		border: solid 1px _palette(border);
-		border-radius: _size(border-radius);
-		display: block;
-		padding: 1.4em 1.5em;
+		border: 0;
+		border-bottom: solid 1px _palette(border);
+		color: _palette(fg);
+		display: flex;
+		gap: 1.5em;
+		justify-content: space-between;
+		padding: 1.05em 0.15em;
 
-		.k {
-			color: _palette(accent1);
-			display: block;
-			font-family: _font(family-fixed);
-			font-size: 0.58rem;
-			letter-spacing: 0.2em;
-			margin-bottom: 0.6em;
-			text-transform: uppercase;
+		.ref-title {
+			color: _palette(fg-bold);
+			font-size: 1.05em;
 		}
 
-		.t {
-			color: _palette(fg-bold);
-			font-size: 0.98em;
+		.ref-domain {
+			@include vendor('align-items', 'center');
+			color: _palette(fg-dim);
+			display: inline-flex;
+			flex-shrink: 0;
+			font-family: _font(family-fixed);
+			font-size: 0.62rem;
+			gap: 0.55em;
+			letter-spacing: 0.16em;
+			text-transform: uppercase;
+			white-space: nowrap;
+		}
+
+		.ref-arrow {
+			@include vendor('transition', 'transform 0.3s ease');
 		}
 
 		&:hover {
-			background: _palette(panel-hover);
-			border-color: _palette(border-strong);
-			color: inherit !important;
-			transform: translateY(-3px);
+			border-bottom-color: _palette(border-strong);
+
+			.ref-title { color: _palette(accent1); }
+			.ref-domain { color: _palette(accent1); }
+			.ref-arrow { transform: translate(2px, -2px); }
 		}
 
-		// Outbound links are visually quieter than DAMP's own.
-		&.is-external {
-			background: transparent;
+		&:focus-visible {
+			outline: solid 2px _palette(accent1);
+			outline-offset: 3px;
+		}
+	}
 
-			.k { color: _palette(fg-dim); }
-			.t { color: _palette(fg); }
+	@include breakpoint(small) {
+		.ref-link {
+			flex-direction: column;
+			gap: 0.35em;
+
+			.ref-domain { align-self: flex-start; }
 		}
 	}
 
@@ -82,9 +80,10 @@
 		.tag {
 			color: _palette(accent2);
 			display: block;
-			font-family: _font(family-fixed);
-			font-size: 0.65rem;
-			letter-spacing: 0.3em;
+			font-family: _font(family);
+			font-size: 0.7rem;
+			font-weight: 600;
+			letter-spacing: 0.14em;
 			margin-bottom: 1em;
 			text-transform: uppercase;
 		}
@@ -170,9 +169,10 @@
 
 		li {
 			color: _palette(fg-dim);
-			font-family: _font(family-fixed);
-			font-size: 0.62rem;
-			letter-spacing: 0.1em;
+			font-family: _font(family);
+			font-size: 0.66rem;
+			font-weight: 600;
+			letter-spacing: 0.08em;
 			padding-left: 0;
 			text-transform: uppercase;
 
@@ -209,17 +209,18 @@
 		button {
 			@include vendor('align-items', 'center');
 			@include vendor('display', 'flex');
-			background: rgba(3,9,19,0.72);
+			background: rgba(7,10,18,0.72);
 			backdrop-filter: blur(14px);
 			-webkit-backdrop-filter: blur(14px);
 			border: solid 1px _palette(border);
 			border-radius: 999px;
 			color: _palette(fg-dim);
-			font-family: _font(family-fixed);
-			font-size: 0.6rem;
+			font-family: _font(family);
+			font-size: 0.62rem;
+			font-weight: 600;
 			gap: 0.55em;
 			height: auto;
-			letter-spacing: 0.14em;
+			letter-spacing: 0.1em;
 			line-height: 1;
 			padding: 0.7em 1.05em;
 			text-transform: uppercase;
@@ -264,4 +265,217 @@
 	@include keyframes('sim-pulse') {
 		0%, 100% { opacity: 1; }
 		50%      { opacity: 0.35; }
+	}
+
+/* Newsletter — featured latest issue + archive grid --------------------- */
+
+	.newsletter-feature {
+		@include vendor('align-items', 'center');
+		background: _palette(panel);
+		border: solid 1px _palette(border);
+		display: grid;
+		gap: 1.4em 2.6em;
+		grid-template-columns: 1.15fr 1fr;
+		margin-bottom: _size(element-margin);
+		overflow: hidden;
+		padding: 2em 2.1em;
+		position: relative;
+
+		// Section accent stated once, across the top edge — the tile/card
+		// signature, not a left-hand stripe.
+		&:before {
+			background: var(--card-accent, #{_palette(accent2)});
+			content: '';
+			height: 2px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+
+		.nf-kicker {
+			color: var(--card-accent, #{_palette(accent2)});
+			display: block;
+			font-family: _font(family);
+			font-size: 0.68rem;
+			font-weight: 600;
+			letter-spacing: 0.12em;
+			margin-bottom: 0.9em;
+			text-transform: uppercase;
+		}
+
+		.nf-title {
+			font-family: _font(family-display);
+			font-size: 2em;
+			font-weight: 400;
+			letter-spacing: -0.02em;
+			line-height: 1.1;
+			margin: 0 0 0.4em;
+		}
+
+		.nf-desc {
+			color: _palette(fg-dim);
+			margin: 0 0 0.55em;
+		}
+
+		.nf-tag {
+			color: _palette(fg-light);
+			font-size: 0.9em;
+			margin: 0;
+		}
+
+		.nf-actions {
+			display: flex;
+			flex-direction: column;
+			gap: 0.9em;
+		}
+
+		@include breakpoint(medium) {
+			gap: 1.3em;
+			grid-template-columns: 1fr;
+			padding: 1.8em;
+
+			.nf-title { font-size: 1.7em; }
+		}
+	}
+
+	.feature-link {
+		@include vendor('align-items', 'center');
+		@include vendor('transition', (
+			'gap #{_duration(transition)} ease',
+			'color #{_duration(transition)} ease'
+		));
+		border: 0;
+		color: var(--card-accent, #{_palette(accent2)});
+		display: inline-flex;
+		font-weight: 500;
+		gap: 0.5em;
+		width: -moz-fit-content;
+		width: fit-content;
+
+		svg { @include vendor('transition', 'transform 0.3s ease'); }
+
+		&:hover {
+			color: var(--card-accent, #{_palette(accent2)}) !important;
+			gap: 0.75em;
+
+			svg { transform: translateX(3px); }
+		}
+
+		&.is-quiet {
+			color: _palette(fg-dim);
+			font-weight: 400;
+
+			&:hover { color: _palette(fg-bold) !important; }
+		}
+	}
+
+	.newsletter-grid {
+		display: grid;
+		gap: 1.2em;
+		grid-template-columns: repeat(auto-fill, minmax(14.5em, 1fr));
+		list-style: none;
+		margin: 0 0 _size(element-margin) 0;
+		padding-left: 0;
+
+		li { padding-left: 0; }
+	}
+
+	.issue-card {
+		@include vendor('transition', (
+			'border-color #{_duration(transition)} ease',
+			'transform #{_duration(transition)} ease'
+		));
+		background: _palette(bg-alt);
+		border: solid 1px _palette(border);
+		color: inherit;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		position: relative;
+
+		&:before {
+			@include vendor('transition', 'transform 0.45s cubic-bezier(.2,.7,.3,1)');
+			background: var(--card-accent, #{_palette(accent2)});
+			content: '';
+			height: 2px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transform: scaleX(0);
+			transform-origin: left;
+			width: 100%;
+			z-index: 3;
+		}
+
+		.issue-thumb {
+			background: _palette(bg-deep);
+			display: block;
+			overflow: hidden;
+			padding-bottom: 128%;
+			position: relative;
+
+			img {
+				height: 100%;
+				left: 0;
+				object-fit: cover;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+		}
+
+		.issue-body {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			padding: 1.1em 1.2em 1.2em;
+		}
+
+		.issue-title {
+			color: _palette(fg-bold);
+			display: block;
+			font-family: _font(family-display);
+			font-size: 1.15em;
+			font-weight: 400;
+			letter-spacing: -0.015em;
+			margin: 0 0 0.35em;
+		}
+
+		.issue-desc {
+			color: _palette(fg-dim);
+			display: block;
+			font-size: 0.82em;
+			line-height: 1.55;
+			margin: 0 0 1.1em;
+		}
+
+		.issue-link {
+			@include vendor('align-items', 'center');
+			@include vendor('transition', 'gap #{_duration(transition)} ease');
+			color: var(--card-accent, #{_palette(accent2)});
+			display: inline-flex;
+			font-family: _font(family);
+			font-size: 0.68rem;
+			font-weight: 600;
+			gap: 0.55em;
+			letter-spacing: 0.08em;
+			margin-top: auto;
+			text-transform: uppercase;
+
+			svg { @include vendor('transition', 'transform 0.3s ease'); }
+		}
+
+		&:hover {
+			border-color: _palette(border-strong);
+			transform: translateY(-4px);
+
+			&:before { transform: scaleX(1); }
+
+			.issue-link {
+				gap: 0.8em;
+
+				svg { transform: translate(1px, -1px); }
+			}
+		}
 	}

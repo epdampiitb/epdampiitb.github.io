@@ -1,0 +1,227 @@
+###
+- name: Astitva Raj
+  img: assets/images/team26/astitva.png
+  bio: Hey everyone, Astitva here. You’ll usually find me watching movies, exploring new sports, or hunting for good food. And also, I may not wear a cape but definitely here to save the day, your friendly neighbourhood DAMP-C.
+  links:
+  - type: email
+    url: mailto:dampcep@gmail.com
+  - type: instagram
+    url: https://www.instagram.com/_astitva_raj
+
+###
+- name: Abhinav Prasad
+  img: assets/images/team26/abhinav.jpeg
+  bio: Huge nerd but hates solving puzzles
+  links:
+  - type: email
+    url: mailto:abhinav.prasad@gmail.com
+
+###
+- name: Akshat Kushwah
+  img: assets/images/team26/akshat.jpg
+  bio: I love movie spoilers, so much that it's tea at this point. Always in for the tea :>
+  links:
+  - type: email
+    url: mailto:23b1830@iitb.ac.in
+  - type: instagram
+    url: https://www.instagram.com/akshatwhatk
+  - type: linkedin
+    url: https://www.linkedin.com/in/akshat-kushwah-06074b282/
+
+###
+- name: Anamika Garg
+  img: assets/images/team26/anamika.jpg
+  bio: I have everything under control, mostly
+  links:
+  - type: email
+    url: mailto:24b1808@iitb.ac.in
+  - type: instagram
+    url: https://www.instagram.com/_anamikaaaa.__
+
+###
+- name: Ananya Priyaroop
+  img: assets/images/team26/ananya.jpeg
+  bio: Hello, Ananya this side. A final year student in EP. Trying to find colours in a world that often seems black and white. Find me in the department library and then let's go out for food :))
+  links:
+  - type: email
+    url: mailto:ananyapriyaroop@gmail.com
+  - type: instagram
+    url: https://www.instagram.com/ananyapriyaroop
+  - type: github
+    url: https://github.com/ANOsapien
+
+###
+- name: Arnav 'Mimikyu' Jain
+  img: assets/images/team26/arnav.jpg
+  bio: Cutest DAMP mentor will probably be found in computer lab.Pokemon and physics nerd. ^^'
+  links:
+  - type: email
+    url: mailto:jarnav483@gmail.com
+  - type: instagram
+    url: https://www.instagram.com/a.wild.mimikyu.appeared
+
+###
+- name: Aseem Godbole
+  img: assets/images/team26/godbole.jpeg
+  bio: Hello, I am Aseem! Im an EP Thirdie. I enjoy playing chess, basketball and football. I’m also a big fan of card magic and cardistry, and I enjoy performing the occasional card trick for friends!
+  links:
+  - type: email
+    url: mailto:aseemgodbole01@gmail.com
+- name: Asher John
+  img: assets/images/team26/asher.jpeg
+  bio: Hey, I'm Asher, a third year. I like reading manga, manhwa, and webnovels. I also have been playing pickleball lately (not very well though :P). I'm introverted, but when I start talking it's difficult to shut me up. If you want to contact me, I'm chronically online, so just text me
+  links:
+  - type: email
+    url: mailto:24b1819@iitb.ac.in
+  - type: instagram
+    url: https://www.instagram.com/arsenic_hydrogen_erbium
+
+###
+- name: Chinmay Kale
+  img: assets/images/team26/chinmay.jpg
+  bio: What's good yall, Chinmay here, your resident unc! I have a wide variety of interests, ranging from following nearly every sport (Arsenal, Jags, Ms FTW) to quizzing, to getting into needlessly competitive games of badminton with my friends. Always happy to discuss about any and all topics under the sun, and looking forward to getting to know everyone!
+  links:
+  - type: email
+    url: mailto:chinmaykale1@gmail.com
+  - type: twitter
+    url: https://x.com/2plus2_is5
+  - type: github
+    url: https://github.com/ChiniKale
+  - type: instagram
+    url: https://youtu.be/ZdwST4RKlqQ
+
+###
+- name: Durva Saraf
+  img: assets/images/team26/durva.jpeg
+  bio: Most likely reading, writing or sleeping. Introvert until the conversation gets interesting. Surviving on coffee, music and unrealistic to-do lists. Rainy days enthusiast with a soft spot for books and quiet places. Looks calm, brain absolutely isn't.
+  links:
+  - type: email
+    url: mailto:sarafdurva@gmail.com
+  - type: instagram
+    url: https://www.instagram.com/ds_8370
+
+###
+- name: G. Preetham
+  img: assets/images/team26/preetham.jpg
+  bio: Heya! I'm Preetham. I spend my free time either watching movies or writing/reading shitty reviews about them. Greg Heffley shaped me into the person I am today, so make of that what you will. I also enjoy music and watching football. Always up for a chat, about any of the above or otherwise.
+  links:
+  - type: email
+    url: mailto:pgunapreetham@gmail.com
+  - type: instagram
+    url: https://www.instagram.com/pgpreetham_10
+  - type: linkedin
+    url: https://www.linkedin.com/in/guna-preetham-pydisetti-212473318/
+  - type: letterboxd
+    url: https://boxd.it/aumkN
+
+###
+- name: Gargi Joshi
+  img: assets/images/team26/gargi.jpeg
+  bio: Wanna join for an ice-cream or try out a food place from insta? Always ready for that (I definitely do not have reels saved about a 1000 places to go :))
+  links:
+  - type: email
+    url: mailto:24b1837@iitb.ac.in
+  - type: instagram
+    url: https://www.instagram.com/gargij_13
+
+###
+- name: Karma Thendup Bhutia
+  img: assets/images/team26/karma.jpeg
+  bio: I’ll guide you guys or smth. Idk
+  links:
+  - type: email
+    url: mailto:bhutiakarma840@gmail.com
+
+###
+- name: Nitansh Sachdev
+  img: assets/images/team26/nitansh.jpeg
+  bio: uhhhh... hi
+  links:
+  - type: email
+    url: mailto:nitansh@disr.it
+  - type: instagram
+    url: https://www.instagram.com/nitannsh
+  - type: twitter
+    url: https://x.com/nitansh_
+
+###
+- name: Radhika Agarwal
+  img: assets/images/team26/radhika.jpeg
+  bio: Hey, I’m Radhika! You will almost always spot me in cafe 97 glued to a screen. I love watching movies, documentaries, and shows (currently deep in my murder documentary phase), and enjoy being outdoors. I’m also a big Bollywood music fan and am into robotics (we’re figuring that part out together). Feel free to reach out to me anytime :)
+  links:
+  - type: email
+    url: mailto:24b1804@iitb.ac.in
+  - type: instagram
+    url: https://www.instagram.com/radhikaag__
+  - type: github
+    url: https://github.com/Radhika-B1084
+
+###
+- name: Ritika Dixit
+  img: assets/images/team26/ritika.jpg
+  bio: Hey, I'm Ritika! I'm a third- year Engineering Physics student who somehow always ends up juggling too many things at once. You'll usually find me with a cup of chai, working on something, or convincing myself that I'll start "in five minutes." I enjoy good conversations, discovering new cafés, binge-watching a good series and trying out random ideas and projects. I'm always happy to meet new people, so feel free to reach out anytime. :)
+  links:
+  - type: email
+    url: mailto:ritsdixit0412@gmail.com
+  - type: instagram
+    url: https://www.instagram.com/ritsdixit_0412
+  - type: linkedin
+    url: https://www.linkedin.com/in/ritika-dixit-7b864a315
+  - type: github
+    url: https://github.com/Ritsdixit
+
+###
+- name: Shreya Anand
+  img: assets/images/team26/shreya.jpeg
+  bio: Hey! I'm Shreya, and I love singing, reading and especially yapping and hanging around with people. At any point of the day, there's maybe a 95% chance of finding me in the comp lab, so catch me there anytime for a chat :)
+  links:
+  - type: email
+    url: mailto:shreya.anandsr@gmail.com
+  - type: instagram
+    url: https://www.instagram.com/__shreyaanand/
+
+###
+- name: Shruti Pikle
+  img: assets/images/team26/pikle.jpg
+  bio: Hey sophies! I'm a to-be fourthie as a DAMP for-thee (sorry, not sorry!). 🤙 When I’m not stuck in lectures, you’ll usually find me hunting down good unhealthy food, binging the same show for the 1000th time, yapping about my favorite topics or dancing till I can't breathe. Come exam season, I cope with the stress by dancing at 3 AM instead of studying (having a roommate who goes for a run at 3 AM helps). I also love stargazing and planning 7-day treks that I never actually go on. I’m notoriously slow at replying, but I promise to break my <b>2 business days rule</b> for my dear mentees :) Feel free to hit me up if you want to just hangout, go on a food run, need a safe space to rant, or just want to waste some time together!
+  links:
+  - type: email
+    url: mailto:pikleshruti@gmail.com
+  - type: instagram
+    url: https://www.instagram.com/shrutipikle
+  - type: linkedin
+    url: https://www.linkedin.com/in/shruti-pikle-22375b32b
+  
+###
+- name: Soham Sahasrabuddhe
+  img: assets/images/team26/soham.jpg
+  bio: Hola junta! Soham here, a particle astrophysics enthusiast. Some people call me "Virus", because my surname might remind you of a certain iconic movie character... or maybe I'm the actual virus responsible for the chaos around here, who knows xD? A huge sports buff and can happily watch almost any sport, though cricket, football (Visca Barca!), and motorsports are my usual go-tos. I'm also a bit of a history nerd, if time travel ever gets invented, I'll probably be the first person to run back. When I'm not busy solving the universe's most pressing problems you'll most likely find me yapping around in department
+  links:
+  - type: email
+    url: mailto:sohams@iitb.ac.in
+  - type: instagram
+    url: https://www.instagram.com/ssoham_10
+  - type: twitter
+    url: https://x.com/Asteroidnix89
+  - type: linkedin
+    url: https://www.linkedin.com/in/soham-sahasrabuddhe
+  - type: github
+    url: https://github.com/soham10
+
+###
+- name: Sourav Sreenath
+  img: assets/images/team26/sourav.jpeg
+  bio: I’m Sourav Sreenath, a third year Engineering Physics student. I’m interested in high-energy physics and particle physics, although a lot of my time outside classes is spent watching YouTube, following random shows, and generally finding ways to avoid being productive. Feel free to reach out if you have questions about courses, internships, research, or life at IITB. If you’re confused about something, there’s a good chance I was confused about the same thing at some point too.
+  links:
+  - type: email
+    url: mailto:24b1841@iitb.ac.in
+
+###
+- name: Vithulakash
+  img: assets/images/team26/vithul.png
+  bio: Hello!! I'm Vithul. I love sports in general, mainly football (Visca Barça). I spend most of my time re-watching FRIENDS even though I already know all the punchlines. I recently started reading books (psychological thrillers and mystery novels especially), so if you have any really good suggestions, let me know! Currently into ML (even though I say ML, it is only RL that I'm interested in rn). Drop by the library to have a nice chat. I'm usually hiding out there solely for the AC.
+  links:
+  - type: email
+    url: mailto:24b1801@iitb.ac.in
+  - type: instagram
+    url: https://www.instagram.com/vithulakash

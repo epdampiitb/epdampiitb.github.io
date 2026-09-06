@@ -16,7 +16,7 @@
   'use strict';
 
   var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var BG = '#05070e';
+  var BG = '#070a12';
 
   function dpr() { return Math.min(window.devicePixelRatio || 1, 2); }
 

@@ -1,44 +1,6 @@
-/* Box */
-
-	.box {
-		@include vendor('transition', (
-			'border-color #{_duration(transition)} ease',
-			'background-color #{_duration(transition)} ease',
-			'transform #{_duration(transition)} ease'
-		));
-		background: _palette(panel);
-		border: solid 1px _palette(border);
-		border-radius: 0;
-		margin-bottom: _size(element-margin);
-		padding: 1.75em;
-
-		> :last-child,
-		> :last-child > :last-child,
-		> :last-child > :last-child > :last-child {
-			margin-bottom: 0;
-		}
-
-		&.alt {
-			background: none;
-			border: 0;
-			border-radius: 0;
-			padding: 0;
-		}
-	}
-
-	a.box, .box.link {
-		display: block;
-
-		&:hover {
-			background: _palette(panel-hover);
-			border-color: _palette(border-strong);
-			transform: translateY(-3px);
-		}
-	}
-
-/* Card — used by the course / experience index pages.
-   Previously declared inline on those pages; defined here so every
-   card on the site shares one look. */
+/* Card — the section-index card (Courses / Experiences / Kaleidoscope).
+   Brought up to the home-tile standard: accent hairline, serif title, an
+   editorial arrow-link affordance, and the page's section accent. */
 
 	.card {
 		@include vendor('transition', (
@@ -52,14 +14,60 @@
 		display: block;
 		height: 100%;
 		margin-bottom: _size(element-margin);
+		overflow: hidden;
 		padding: 1.75em;
+		position: relative;
+
+		// Section accent line, drawn across the top edge on hover — the same
+		// signature the home tiles carry.
+		&:before {
+			@include vendor('transition', 'transform 0.45s cubic-bezier(.2,.7,.3,1)');
+			background: var(--card-accent, #{_palette(accent1)});
+			content: '';
+			height: 2px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transform: scaleX(0);
+			transform-origin: left;
+			width: 100%;
+		}
 
 		> :last-child {
 			margin-bottom: 0;
 		}
 
-		h3, h4 {
+		// Card titles carry the display serif, matching the home tiles, so a
+		// card reads as a named thing rather than another block of UI sans.
+		h3 {
+			font-family: _font(family-display);
+			font-weight: 400;
+			letter-spacing: -0.015em;
 			margin-bottom: 0.5em;
+		}
+
+		h4 {
+			margin-bottom: 0.5em;
+		}
+
+		// A linked title reads as a followable editorial link: a small accent
+		// chevron trails it and a themed underline draws in on hover.
+		h3 a, h4 a {
+			position: relative;
+
+			&:after {
+				border-right: solid 1px var(--card-accent, #{_palette(accent1)});
+				border-top: solid 1px var(--card-accent, #{_palette(accent1)});
+				content: '';
+				display: inline-block;
+				height: 0.4em;
+				margin-left: 0.5em;
+				opacity: 0.75;
+				transform: rotate(45deg);
+				vertical-align: middle;
+				width: 0.4em;
+				@include vendor('transition', 'transform 0.3s ease');
+			}
 		}
 
 		p {
@@ -71,5 +79,24 @@
 			background: _palette(panel-hover);
 			border-color: _palette(border-strong);
 			transform: translateY(-3px);
+
+			&:before { transform: scaleX(1); }
+
+			h3 a, h4 a {
+				text-decoration: underline;
+				text-decoration-color: var(--card-accent, #{_palette(accent1)});
+				text-decoration-thickness: 1px;
+				text-underline-offset: 0.18em;
+
+				&:after { transform: rotate(45deg) translate(2px, -2px); }
+			}
 		}
 	}
+
+// Section accent inherited by cards on that page (set on #main from front
+// matter). Cards fall back to cyan when a page declares no accent.
+	#main[data-accent="cyan"]   { --card-accent: #{_palette(accent1)}; }
+	#main[data-accent="violet"] { --card-accent: #{_palette(accent2)}; }
+	#main[data-accent="amber"]  { --card-accent: #{_palette(accent3)}; }
+	#main[data-accent="green"]  { --card-accent: #{_palette(accent4)}; }
+	#main[data-accent="rose"]   { --card-accent: #{_palette(accent5)}; }

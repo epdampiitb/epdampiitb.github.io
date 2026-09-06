@@ -135,14 +135,16 @@ course_filter: true
       </span>
     </div>
     <h3><a href="{{ r.url | relative_url }}">{% if r.course_name and r.course_name != '' %}{{ r.course_name }}{% else %}{{ r.code }}{% endif %}</a></h3>
-    <dl class="cc-meta">
-      {% if r.prof and r.prof != '' %}<div><dt>Prof</dt><dd>{{ r.prof }}</dd></div>{% endif %}
-      {% if r.sem %}<div><dt>Sem</dt><dd>{{ r.sem }}</dd></div>{% endif %}
-      {% if r.term %}<div><dt>Term</dt><dd>{{ r.term | capitalize }}{% if r.year %} {{ r.year }}{% endif %}</dd></div>{% endif %}
-      {% if r.dept %}<div><dt>Dept</dt><dd>{{ r.dept }}</dd></div>{% endif %}
-      <div><dt>Workload</dt><dd>{% if r.workload and r.workload != '' %}{{ r.workload | capitalize }}{% else %}<span class="cc-unrated">not rated</span>{% endif %}</dd></div>
-      <div><dt>Grading</dt><dd>{% if r.grading and r.grading != '' %}{{ r.grading | capitalize }}{% else %}<span class="cc-unrated">not rated</span>{% endif %}</dd></div>
-    </dl>
+    <div class="cc-foot">
+      {% if r.prof and r.prof != '' %}<p class="cc-prof">{{ r.prof }}</p>{% endif %}
+      {%- capture cc_ctx -%}
+        {%- if r.term %}{{ r.term | capitalize }}{% if r.year %} {{ r.year }}{% endif %}{% endif -%}
+        {%- if r.sem %}{% if r.term %} &middot; {% endif %}Sem {{ r.sem }}{% endif -%}
+        {%- if r.dept %}{% if r.term or r.sem %} &middot; {% endif %}{{ r.dept }}{% endif -%}
+      {%- endcapture -%}
+      {% assign cc_ctx = cc_ctx | strip %}
+      {% if cc_ctx != '' %}<p class="cc-ctx">{{ cc_ctx }}</p>{% endif %}
+    </div>
   </article>
 {% endfor %}
 </div>

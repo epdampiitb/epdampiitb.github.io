@@ -11,7 +11,7 @@
 @import 'libs/mixins';
 @import 'libs/skel';
 @import 'font-awesome.min.css';
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;700&family=Fraunces:opsz,wght@9..144,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400..500&display=swap');
 
 
 	@include skel-breakpoints((
@@ -68,10 +68,9 @@
 	@import 'components/button';
 	@import 'components/tiles';
 	@import 'components/contact-method';
-	@import 'components/spotlights';
 	@import 'components/damp';
 	@import 'components/courses';
-	//@import 'components/transitions';
+	@import 'components/team';
 
 // Layout.
 
@@ -82,52 +81,3 @@
 	@import 'layout/footer';
 	@import 'layout/wrapper';
 	@import 'layout/menu';
-
-.align-left .inner {
-  text-align: left;
-  margin-left: 0;
-  margin-right: auto;
-  padding-left: 2rem;   /* or 3rem / 4rem as needed */
-  padding-right: 2rem;  /* keep symmetrical spacing */
-}
-
-.hover-icon-wrapper {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-}
-
-.hover-icon-wrapper .profile-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: opacity 0.3s ease;
-}
-
-.hover-icon-wrapper .icon-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2em;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.hover-icon-wrapper:hover .profile-img {
-  opacity: 0.2;
-}
-
-.hover-icon-wrapper:hover .icon-overlay {
-  opacity: 1;
-}
-
-.fa.fa-twitter{
-	font-family:sans-serif;
-}
-.fa.fa-twitter::before{
-	content:"𝕏";
-	font-size:1.2em;
-}

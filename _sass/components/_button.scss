@@ -32,7 +32,7 @@
 		white-space: nowrap;
 
 		&:hover {
-			background-color: rgba(138,221,245,0.10);
+			background-color: rgba(0,242,254,0.10);
 			border-color: _palette(accent1);
 			color: _palette(accent1) !important;
 			transform: translateY(-2px);
@@ -40,7 +40,7 @@
 
 		&:active {
 			transform: translateY(0);
-			background-color: rgba(127,231,255,0.12);
+			background-color: rgba(0,242,254,0.12);
 		}
 
 		&.icon {

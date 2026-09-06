@@ -12,7 +12,7 @@
     {% include page-top.html %}
 
 <!-- Main -->
-<div id="main" class="alt">
+<div id="main" class="alt"{% if page.accent %} data-accent="{{ page.accent }}"{% endif %}>
 
 <!-- One -->
 <section id="one">

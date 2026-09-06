@@ -84,10 +84,10 @@
 
 	h6 {
 		color: _palette(fg-dim);
-		font-family: _font(family-fixed);
-		font-size: 0.7em;
-		font-weight: 400;
-		letter-spacing: _font(letter-spacing-alt);
+		font-family: _font(family);
+		font-size: 0.72em;
+		font-weight: 600;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 	}
 
@@ -183,9 +183,9 @@
 
 	.mono, .eyebrow {
 		color: _palette(fg-dim);
-		font-family: _font(family-fixed);
-		font-size: 0.68em;
-		font-weight: 400;
-		letter-spacing: _font(letter-spacing-alt);
+		font-family: _font(family);
+		font-size: 0.72em;
+		font-weight: 600;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 	}

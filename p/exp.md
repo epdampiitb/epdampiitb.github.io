@@ -12,9 +12,6 @@ tile_order: 3
 cta: 'Read stories'
 ---
 
-<!-- Main -->
-<div id="main" class="alt">
-
 <!-- Content -->
 <div class="row">
 	<div class="6u$ 12u$(small)">

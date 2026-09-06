@@ -40,7 +40,7 @@
 	}
 
 	::selection {
-		background: rgba(127,231,255,0.25);
+		background: rgba(0,242,254,0.25);
 		color: _palette(fg-bold);
 	}
 
@@ -52,7 +52,7 @@
 	// Thin dark scrollbar to match the theme.
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: rgba(150,190,255,0.22) transparent;
+		scrollbar-color: rgba(148,163,184,0.22) transparent;
 	}
 
 	::-webkit-scrollbar {
@@ -65,10 +65,10 @@
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: rgba(150,190,255,0.20);
+		background: rgba(148,163,184,0.20);
 		border-radius: 10px;
 
 		&:hover {
-			background: rgba(150,190,255,0.35);
+			background: rgba(148,163,184,0.35);
 		}
 	}

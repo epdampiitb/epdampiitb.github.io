@@ -24,11 +24,8 @@
   <article data-accent="{{ sim_accent }}">
     <div class="tile-media">
       <canvas data-sim="{{ sim_name }}" aria-hidden="true"></canvas>
-      <span class="tile-frame" aria-hidden="true"></span>
     </div>
     <div class="tile-body">
-      {% comment %} `plus` coerces a missing offset to 0, so the start group needs no param. {% endcomment %}
-      {% assign n = forloop.index | plus: include.offset %}
       <h3><a href="{{ tile.url | relative_url }}" class="link">{{ tile.title }}</a></h3>
       <p>{{ tile.description }}</p>
       <span class="tile-cta" aria-hidden="true">

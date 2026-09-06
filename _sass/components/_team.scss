@@ -1,0 +1,180 @@
+/* Team roster — the mentors, as a living wall of cards ----------------- */
+
+	.team-roster {
+		@include inner;
+	}
+
+	// Masonry-ish flow via CSS columns: cards keep their natural height, so
+	// a two-word bio and a three-line one both sit comfortably. column-width
+	// makes the column count responsive on its own.
+	.team-grid {
+		-moz-column-gap: 1.5em;
+		-webkit-column-gap: 1.5em;
+		column-gap: 1.5em;
+		-moz-column-width: 19em;
+		-webkit-column-width: 19em;
+		column-width: 19em;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		> li {
+			-moz-column-break-inside: avoid;
+			break-inside: avoid;
+			margin: 0 0 1.5em 0;
+			padding: 0;
+			// A column-broken card can clip its own top border in some
+			// engines; a hairline of padding keeps it whole.
+			overflow: hidden;
+		}
+	}
+
+	.team-card {
+		--tc-accent: #{_palette(accent1)};
+		@include vendor('transition', (
+			'border-color 0.3s ease',
+			'transform 0.4s cubic-bezier(.2,.7,.3,1)'
+		));
+		background: _palette(bg-alt);
+		border: solid 1px _palette(border);
+		overflow: hidden;
+		position: relative;
+
+		// Section accent line, drawn across the top on hover.
+		&:before {
+			@include vendor('transition', 'transform 0.45s cubic-bezier(.2,.7,.3,1)');
+			background: var(--tc-accent);
+			content: '';
+			height: 2px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transform: scaleX(0);
+			transform-origin: left;
+			width: 100%;
+			z-index: 3;
+		}
+
+		&[data-accent="cyan"]   { --tc-accent: #{_palette(accent1)}; }
+		&[data-accent="violet"] { --tc-accent: #{_palette(accent2)}; }
+		&[data-accent="amber"]  { --tc-accent: #{_palette(accent3)}; }
+		&[data-accent="green"]  { --tc-accent: #{_palette(accent4)}; }
+		&[data-accent="rose"]   { --tc-accent: #{_palette(accent5)}; }
+
+		// The person sits quiet until you look at them, then lights up.
+		.tc-photo {
+			aspect-ratio: 1 / 1;
+			background: _palette(bg-deep);
+			overflow: hidden;
+			position: relative;
+
+			img {
+				@include vendor('transition', (
+					'filter 0.5s ease',
+					'transform 0.6s cubic-bezier(.2,.7,.3,1)'
+				));
+				display: block;
+				filter: grayscale(0.5) contrast(1.03) brightness(0.9);
+				height: 100%;
+				object-fit: cover;
+				width: 100%;
+			}
+
+			// A soft floor of shade so the name never fights the photo below.
+			&:after {
+				background: linear-gradient(to top, rgba(7,10,18,0.55), rgba(7,10,18,0) 52%);
+				content: '';
+				inset: 0;
+				pointer-events: none;
+				position: absolute;
+			}
+		}
+
+		.tc-body {
+			padding: 1.3em 1.4em 1.4em;
+		}
+
+		.tc-name {
+			color: _palette(fg-bold);
+			font-family: _font(family-display);
+			font-size: 1.35em;
+			font-weight: 400;
+			letter-spacing: -0.015em;
+			line-height: 1.2;
+			margin: 0 0 0.5em;
+		}
+
+		.tc-bio {
+			color: _palette(fg-dim);
+			font-size: 0.88em;
+			line-height: 1.6;
+			margin: 0 0 1.15em;
+
+			b, strong { color: _palette(fg); }
+		}
+
+		&:hover {
+			border-color: _palette(border-strong);
+			transform: translateY(-4px);
+
+			&:before { transform: scaleX(1); }
+
+			.tc-photo img {
+				filter: none;
+				transform: scale(1.045);
+			}
+		}
+	}
+
+	// Social links — proper round icon buttons (the old markup shipped a
+	// duplicate class attribute, so every icon was silently dropped).
+	.social-ic {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			@include vendor('align-items', 'center');
+			@include vendor('display', 'inline-flex');
+			@include vendor('justify-content', 'center');
+			@include vendor('transition', (
+				'background-color 0.2s ease',
+				'border-color 0.2s ease',
+				'color 0.2s ease',
+				'transform 0.2s ease'
+			));
+			border: solid 1px _palette(border);
+			border-radius: 50%;
+			color: _palette(fg-dim);
+			font-size: 0.9em;
+			height: 2.3em;
+			width: 2.3em;
+
+			&:hover {
+				background: _palette(panel-hover);
+				border-color: var(--tc-accent, #{_palette(accent1)});
+				color: var(--tc-accent, #{_palette(accent1)}) !important;
+				transform: translateY(-2px);
+			}
+		}
+
+		.fa { line-height: 1; }
+
+		.ic-img {
+			display: block;
+			height: 1.05em;
+			opacity: 0.65;
+			width: auto;
+			@include vendor('transition', 'opacity 0.2s ease');
+		}
+
+		a:hover .ic-img { opacity: 1; }
+	}

@@ -1,3 +1,6 @@
+// Observatory editorial system — the single source of truth for theme tokens.
+// Components consume these via the _palette() / _font() / _size() helpers.
+
 // Misc.
 	$misc: (
 		z-index-base:		10000
@@ -12,7 +15,7 @@
 
 // Size.
 	$size: (
-		border-radius:		12px,
+		border-radius:		2px,
 		element-height:		2.9em,
 		element-margin:		2em,
 		inner:				76em,
@@ -21,73 +24,40 @@
 
 // Font.
 	$font: (
-		family: (Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,Calibri),
-		family-fixed: ("JetBrains Mono","SF Mono",SFMono-Regular,Consolas,"Liberation Mono",Menlo),
-		weight:				300,
-		weight-light:		200,
-		weight-bold:		600,
+		family:				('DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif),
+		family-display:		('Newsreader', Georgia, 'Times New Roman', serif),
+		family-fixed:		('DM Mono', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace),
+		weight:				400,
+		weight-light:		400,
+		weight-bold:		650,
 		letter-spacing:		0,
 		letter-spacing-alt:	0.18em
-		
 	);
 
-// Palette.
+// Palette — "Deep Space Laboratory": a neutral slate ground (not navy-purple)
+// so cards breathe and read naturally, with one electric-cyan interactive
+// voice. Section accents keep their hues for the physics motif.
 	$palette: (
-		bg:					#05070e,	// page
-		bg-alt:				#0a0f1c,	// raised panels, alt sections
-		bg-deep:			#03050a,	// footer, wells
-		panel:				rgba(255,255,255,0.028),
-		panel-hover:		rgba(255,255,255,0.055),
+		bg:					#0b0f19,	// deep obsidian — page (60%)
+		bg-alt:				#161f30,	// muted navy slate — cards, raised panels (30%)
+		bg-deep:			#070a12,	// footer, wells, scrims
+		panel:				rgba(148,163,184,0.05),
+		panel-hover:		rgba(148,163,184,0.10),
 
-		fg:					#e8edf7,
+		fg:					#f1f5f9,	// off-white — high contrast for reading
 		fg-bold:			#ffffff,
-		fg-dim:				#93a1bd,	// secondary text, mono labels
-		fg-light:			rgba(200,215,245,0.35),
+		fg-dim:				#94a3b8,	// neutral slate — secondary text
+		fg-light:			rgba(148,163,184,0.42),
 
-		border:				rgba(150,190,255,0.13),
-		border-strong:		rgba(150,190,255,0.34),
-		border-bg:			rgba(150,190,255,0.045),
+		border:				rgba(148,163,184,0.16),		// natural neutral edge
+		border-strong:		rgba(148,163,184,0.36),
+		border-bg:			rgba(148,163,184,0.06),
 
-		highlight:			#7fe7ff,
-		accent1:			#7fe7ff,	// cyan   — nbody / slit
-		accent2:			#a48cf0,	// violet — chladni
-		accent3:			#ffb35c,	// amber  — lorenz
-		accent4:			#6fe3b0,	// green  — bands
-		accent5:			#ff8fa3,	// rose   — pendulum
-		accent6:			#8ea9e8
+		highlight:			#00f2fe,	// electric cyan — the interactive voice (10%)
+		accent1:			#00f2fe,	// cyan   — nbody / slit, links, buttons
+		accent2:			#b09af6,	// violet — chladni
+		accent3:			#f7a94a,	// amber  — lorenz
+		accent4:			#78d5ac,	// green  — bands
+		accent5:			#f2a3b2,	// rose   — pendulum
+		accent6:			#8ea9e8		// spare  — unclaimed section
 	);
-
-// Observatory editorial system. Kept as map overrides so components continue
-// to consume the same theme tokens while gaining a distinct visual character.
-$size: map-merge($size, (
-	border-radius: 2px
-));
-
-$font: map-merge($font, (
-	family: ('DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif),
-	family-display: ('Fraunces', Georgia, 'Times New Roman', serif),
-	family-fixed: ('DM Mono', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace),
-	weight: 400,
-	weight-light: 400,
-	weight-bold: 650
-));
-
-$palette: map-merge($palette, (
-	bg: #07111e,
-	bg-alt: #0b1828,
-	bg-deep: #030913,
-	panel: rgba(128,164,205,0.055),
-	panel-hover: rgba(128,164,205,0.105),
-	fg: #e6edf7,
-	fg-dim: #b3c1d5,
-	fg-light: rgba(214,227,247,0.48),
-	border: rgba(137,181,229,0.18),
-	border-strong: rgba(137,181,229,0.48),
-	border-bg: rgba(137,181,229,0.07),
-	highlight: #8addf5,
-	accent1: #8addf5,
-	accent2: #b09af6,
-	accent3: #f4b76b,
-	accent4: #78d5ac,
-	accent5: #f2a3b2
-));

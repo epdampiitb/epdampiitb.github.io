@@ -12,36 +12,7 @@ tile_order: 3
 cta: 'Meet the team'
 ---
 
-<style>
-.archive-section .inner {
-	padding-left: 2.25em;
-	padding-right: 3em;
-}
-
-.archive-section header {
-	text-align: left;
-}
-
-.archive-section .actions {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-	justify-content: flex-start;
-}
-
-@media screen and (max-width: 736px) {
-	.archive-section .inner {
-		padding-left: 1.25em;
-		padding-right: 1.5em;
-	}
-}
-</style>
-
-<!-- Main -->
-
 <div id="main">
-
-<!-- One -->
 
 <section id="one">
 	<div class="inner">
@@ -52,6 +23,46 @@ cta: 'Meet the team'
 	</div>
 </section>
 
-<!-- Current Team -->
+{%- assign accents = "cyan,violet,amber,green,rose" | split: "," -%}
+<section id="team" class="team-roster">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="tag">Team 2026 &ndash; 27</span>
+      <h2>Your mentors</h2>
+      <p>{{ site.data.team26 | size }} seniors who&rsquo;ve been exactly where you are :) Feel free to say hi to them!</p>
+    </div>
 
-{% include_relative team/team26-27.md %}
+    <ul class="team-grid">
+      {%- for m in site.data.team26 -%}
+      {%- assign ai = forloop.index0 | modulo: 5 -%}
+      {%- assign accent = accents[ai] -%}
+      <li class="team-card" data-accent="{{ accent }}">
+        <div class="tc-photo">
+          <img src="{{ m.img | relative_url }}" alt="{{ m.name }}" loading="lazy" />
+        </div>
+        <div class="tc-body">
+          <h3 class="tc-name">{{ m.name }}</h3>
+          <p class="tc-bio">{{ m.bio }}</p>
+          {%- if m.links and m.links.size > 0 -%}
+          <ul class="social-ic">
+            {%- for l in m.links -%}
+            <li>
+              {%- case l.type -%}
+              {%- when 'email' -%}<a href="{{ l.url }}" aria-label="Email {{ m.name }}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+              {%- when 'instagram' -%}<a href="{{ l.url }}" target="_blank" rel="noopener" aria-label="{{ m.name }} on Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              {%- when 'linkedin' -%}<a href="{{ l.url }}" target="_blank" rel="noopener" aria-label="{{ m.name }} on LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              {%- when 'github' -%}<a href="{{ l.url }}" target="_blank" rel="noopener" aria-label="{{ m.name }} on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
+              {%- when 'twitter' -%}<a href="{{ l.url }}" target="_blank" rel="noopener" aria-label="{{ m.name }} on X"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              {%- when 'letterboxd' -%}<a href="{{ l.url }}" target="_blank" rel="noopener" aria-label="{{ m.name }} on Letterboxd"><img class="ic-img" src="{{ '/assets/images/letterboxd.png' | relative_url }}" alt="Letterboxd" /></a>
+              {%- endcase -%}
+            </li>
+            {%- endfor -%}
+          </ul>
+          {%- endif -%}
+        </div>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+</div>
