@@ -175,4 +175,4 @@ Hosted on **GitHub Pages**. Pushing to the `master` branch triggers an automatic
 ---
 
 ## Credits
-Originally based on the **Forty** theme by **HTML5 UP**, since then changed heavily and rebuilt for EP DAMP. Fonts: Newsreader, DM Sans, and DM Mono (Google Fonts). Credits to Soham (@soham10) for the physics simulations!
+Originally based on the **Forty** theme by **HTML5 UP**, since then changed heavily and rebuilt for EP DAMP. Fonts: Newsreader and DM Sans. Credits to Soham (@soham10) for the physics simulations!
