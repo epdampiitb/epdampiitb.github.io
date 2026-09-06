@@ -107,12 +107,12 @@ Edit **[`_data/team26.yml`](_data/team26.yml)**. Each mentor is one entry:
   img: assets/images/team/uncertainity.jpg     # drop the photo in assets/images/team/
   bio: "One or two candid sentences. Emoji and <b>bold</b> are fine."
   links:
-    - { type: email,     url: 'mailto:jane@example.com' }
-    - { type: instagram, url: 'https://www.instagram.com/jane' }
-    - { type: linkedin,  url: 'https://www.linkedin.com/in/jane' }
-    - { type: github,    url: 'https://github.com/jane' }
-    - { type: twitter,   url: 'https://x.com/jane' }
-    - { type: letterboxd, url: 'https://boxd.it/xxxx' }
+    - { type: email,     url: 'mailto:wh@example.com' }
+    - { type: instagram, url: 'https://www.instagram.com/i_hate_erwin' }
+    - { type: linkedin,  url: 'https://www.linkedin.com/in/boss' }
+    - { type: github,    url: 'https://github.com/heisenberg' }
+    - { type: twitter,   url: 'https://x.com/catlover' }
+    - { type: letterboxd, url: 'https://boxd.it/cats' }
 ```
 
 Supported `type` values: `email`, `instagram`, `linkedin`, `github`, `twitter`, `letterboxd`. The card layout, the accent colour (auto‑cycled), and the photo hover effect are all handled for you by [`p/team/team26-27.md`](p/team/team26-27.md). For a new academic year, copy that file (e.g. `team27-28.md`), point it at a new data file, and include it from [`p/team_page.md`](p/team_page.md).
