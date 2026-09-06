@@ -153,8 +153,6 @@ course_filter: true
 
 <hr />
 
-<p class="cf-note">Workload and grading are not recorded for these reviews yet. Add <code>workload:</code> and <code>grading:</code> to a review's front matter and the filters for them appear here automatically.</p>
-
 </div>
 </section>
 
