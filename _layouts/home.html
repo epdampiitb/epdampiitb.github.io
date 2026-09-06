@@ -36,7 +36,7 @@
                     <h2>Quick Links</h2>
                 </div>
                 {{ content }}
-                {%- assign refs = "Department of Physics|phy.iitb.ac.in|https://www.phy.iitb.ac.in/;;Academic Homepage|acad.iitb.ac.in|https://acad.iitb.ac.in/;;Calendar & Timetable|acad.iitb.ac.in|https://acad.iitb.ac.in/academics/calendar-and-timetable;;Academic Setup (ASC)|asc.iitb.ac.in|https://asc.iitb.ac.in/" | split: ";;" -%}
+                {%- assign refs = "Department of Physics|phy.iitb.ac.in|https://www.phy.iitb.ac.in/;;Academic Homepage|acad.iitb.ac.in|https://acad.iitb.ac.in/;;Calendar & Timetable|acad.iitb.ac.in|https://acad.iitb.ac.in/academics/calendar-and-timetable;;Internal ASC|asc.iitb.ac.in|https://asc.iitb.ac.in/" | split: ";;" -%}
                 <ul class="ref-index">
                     {%- for ref in refs -%}
                     {%- assign parts = ref | split: "|" -%}
